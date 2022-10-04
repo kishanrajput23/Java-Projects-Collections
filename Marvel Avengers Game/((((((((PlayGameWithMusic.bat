@@ -1,0 +1,3 @@
+javac *.java
+
+java PlayGameWithMusic
