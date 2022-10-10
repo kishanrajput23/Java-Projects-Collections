@@ -2,7 +2,7 @@
 import java.util.Scanner;  
   
 //create ATMExample class to implement the ATM functionality  
-public class ATMExample  
+public class atm 
 {  
     //main method starts   
     public static void main(String args[] )  
