@@ -1,0 +1,23 @@
+.box {
+    width: 500px;
+    height: 120px;   
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+
+    font-size: larger;
+
+    border: 2px solid black;
+
+
+    text-align: center;
+
+    border-radius: 20px;
+    
+
+    background-color: bisque;
+}
