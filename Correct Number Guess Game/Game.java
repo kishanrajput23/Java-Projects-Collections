@@ -42,7 +42,7 @@ class Game1{
 }
 
 
-public class CorrectNoGuessGame {
+public class Game {
     public static void main(String[] args) {
         Game1 gaming=new Game1();
         boolean b=false;
