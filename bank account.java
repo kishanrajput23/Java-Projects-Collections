@@ -3,11 +3,11 @@ class bank_account{
     String name,type;
     float amount;
 
-void account_details(int a,String b,String c,float d){
-    account_no=a;
-    name=b;
-    type=c;
-    amount=d;
+void account_details(int bank_account,String nameOfCustomer,String typeName,float amout_details){
+    account_no=bank_account;
+    name=nameOfCustomer;
+    type=typeName;
+    amount=amout_details;
 }
 void show(){
     System.out.println(account_no+" "+name+" "+type+" "+amount+" ");
