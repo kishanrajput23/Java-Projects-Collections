@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <div class="container">
+        <div class="row my-5 py-5">
+            <div class="col-4 offset-4">
+                <div class="form-group">
+                    <label for="">Enter Temperature in Celcius(°C)</label>
+                    <input type="text" id="temp" class="form-control">
+                </div>
+                <input type="submit" id="submit" class="btn btn-success">
+            </div>
+        </div>
+        <div class="row my-3 py-3">
+            <div class="col-4 offset-4">
+                <div class="form-group">
+                    <label for="">Temperature in Fahrenheit(°F)</label>
+                    <input type="text" id="Faht" class="form-control" readonly>
+                </div>
+            </div>
+        </div> -->
+
+    <div class="container">
+        <div class="parent_div">
+            <div class="child_div">
+                <label for="celcius">Enter Temperature in °C</label>
+                <br />
+                <input type="text" id="celcius">
+                <div class="btn-div">
+                    <button class="btn" onclick="convert()">Submit</button>
+                </div>
+                <label for="farenheit">Temperature in °F</label>
+                <br />
+                <input type="text" id="farenheit" disabled>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
