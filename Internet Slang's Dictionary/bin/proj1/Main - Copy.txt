@@ -1,0 +1,376 @@
+package proj1;
+
+import java.util.*;
+class node
+{
+	node lc,rc;
+	String name;
+	String meaning;
+	int h;
+	public node(String name,String meaning)   //parameterized constructor of class node
+	{
+		this.name=name.toLowerCase();
+		this.meaning=meaning; 
+		//lc=rc=null;
+		h=1;
+	}
+}
+
+class AVL
+{
+	Scanner sc = new Scanner (System.in);
+	private node root;   
+	public AVL()
+	{
+		root=null;
+	}
+	
+	int height(node root)   // height to calculate balance factor of tree
+	{
+		int lh, rh;
+		if(root == null)
+		return 0;
+		if(root.lc == null)
+		lh = 0;
+		else
+		lh = 1 + root.lc.h;
+		if(root.rc == null)
+		rh = 0;
+		else
+		rh = 1 + root.rc.h;
+		if(lh > rh)
+		return lh;
+		else
+		return rh;
+	}
+	
+	int balanceFactor(node root)   
+	{int bf, lh, rh;
+	if(root == null)
+		return 0;
+		if(root.lc == null)
+		lh = 0;
+		else
+		lh = 1 + height(root.lc);
+		if(root.rc == null)
+		rh = 0;
+		else
+		rh = 1 + height(root.rc);
+		bf = lh - rh;
+		return bf;
+		
+	}
+	
+node LL(node ptr)   
+	{
+	//Right Rotation
+	node tmp = root.lc;
+	root.lc = tmp.rc;
+	tmp.rc = root;
+	tmp.h = height(tmp);
+	root.h = height(root);
+	return tmp;
+	}
+	
+	node RR(node ptr)    
+	{
+		//Left Rotation
+		node tmp = root.rc;
+		root.rc = tmp.lc;
+		tmp.lc = root;
+		tmp.h = height(tmp);
+		root.h = height(root);
+		return tmp;	
+	}
+	
+	node LR(node root)
+	{
+		root.lc=RR(root.lc);
+		root=LL(root);
+		return root;
+	}
+	
+	node RL(node root)    
+	{
+		root.rc=LL(root.rc);
+		root=RR(root);
+		
+		return root;
+	}
+	
+	
+	node insert(node root, node temp){
+		int bf;
+		if(root == null){
+		root = new node(temp.name, temp.meaning);
+		return root;
+		}
+		if(temp.name.compareTo(root.name) < 0){
+		root.lc = insert(root.lc, temp);
+		bf = balanceFactor(root);
+		if(bf == 2){
+		if(temp.name.compareToIgnoreCase(root.lc.name) < 0)
+		root = LL(root);
+		else
+		root = LR(root);
+		}
+		}
+		else{ //cn.compareToIgnoreCase(root.customerName) > 0
+		root.rc = insert(root.rc, temp);
+		bf = balanceFactor(root);
+		if(bf == -2){
+		if(temp.name.compareToIgnoreCase(root.rc.name) > 0)
+		root = RR(root);
+		else
+		root = RL(root);
+		}
+		}
+		root.h = height(root);
+		return root;
+	}
+	
+	void create(String Name,String mean)    //Accept general information form customer
+	{
+		
+		node temp=new node(Name,mean);
+		root=insert(root,temp);
+		
+		
+	}
+	void display(node localRoot)           // Inorder  traversal 
+	{
+			if(localRoot != null){
+			display(localRoot.lc);
+			System.out.println(localRoot.name+" -"+localRoot.meaning);
+			display(localRoot.rc);
+			}
+			
+	}
+	node getRoot() {//utility function for restricted access
+		return root;
+	}
+	void findWord() {//juhi
+		System.out.print("\nEnter word : ");
+		String target=sc.nextLine().toLowerCase();
+		node current=root;
+		while(current!=null) {
+			int comparison=target.compareTo(current.name);
+			if(comparison==0) {
+				System.out.println("\nWord : "+current.name.toUpperCase()+"\t\t-\t\tMeaning : "+current.meaning);
+				return;
+			}
+			else if(comparison<0) {
+				current=current.lc;
+			}
+			else {//comparison>0
+				current=current.rc;
+			}
+		}
+		System.out.println("\nWord not found! Please be more specific.");
+	}
+	int displayWordsAt(node head,String i,int t)  //juhi
+	    {  
+	        if (head != null)  
+	        {  if(head.name.startsWith(i)) {
+	        	t++;
+	        	System.out.println("Word : "+head.name+"\t\t-\t\tMeaning : "+head.meaning);
+	        }
+	        t=displayWordsAt(head.lc, i,t);  
+	        t=displayWordsAt(head.rc, i,t);
+	        return t;
+	        }
+			return t;  
+	        
+	    }
+
+		
+	
+	int totalWordsCount(node r) {//vaishnav
+	         if (r == null) {
+	             return 0;
+	         }
+	         else
+	         {
+	             int l = 1;
+	             l += totalWordsCount(r.lc);
+	             l += totalWordsCount(r.rc);
+	             return l;
+	         }
+	     
+		
+	}
+	int wordsCountAt(node rr,char j) {//vaishnav
+        if (rr == null) {
+            return 0;
+        }
+        else
+        {
+            int l = 1;
+            l += wordsCountAt(rr.lc,j);
+            l += wordsCountAt(rr.rc,j);
+            return l;
+        }
+    
+	
+}
+	int wordCountAt(char j) {//srushti
+		int count=0;  
+		
+		node ptr=root;
+		while(ptr!=null ){
+			if(ptr.name.charAt(0)==j){
+				
+				count++;
+				}
+			char c=ptr.name.charAt(0);
+			if(Character.compare(j, c)<0)
+				ptr=ptr.lc;
+			else 
+				ptr=ptr.rc;
+			}
+		return count;
+		}
+	void wordStartsWithVowel() {//juhi
+		System.out.println("\nStarts with Vowel : 'a' \n");
+		displayWordsAt(root,"a",0);
+		System.out.println("\nStarts with Vowel : 'e' \n");
+		displayWordsAt(root,"e",0);
+		System.out.println("\nStarts with Vowel : 'i' \n");
+		displayWordsAt(root,"i",0);
+		System.out.println("\nStarts with Vowel : 'o' \n");
+		displayWordsAt(root,"o",0);
+		System.out.println("\nStarts with Vowel : 'u' \n");
+		displayWordsAt(root,"u",0);
+	}
+	void wordCountStartsWithVowel() {//juhi
+		int t=0;
+		{
+		int c= wordCountAt('a');
+		System.out.println("Total no. of words starting with vowel : 'a' are - "+c);
+		t=t+c;
+		}
+		{
+			int c= wordCountAt('e');
+			System.out.println("Total no. of words starting with vowel : 'e' are - "+c);
+			t=t+c;
+		}
+		{
+			int c= wordCountAt('i');
+			System.out.println("Total no. of words starting with vowel : 'i' are - "+c);
+			t=t+c;
+		}
+		{
+			int c= wordCountAt('o');
+			System.out.println("Total no. of words starting with vowel : 'o' are - "+c);
+			t=t+c;
+		}
+		{
+			int c= wordCountAt('u');
+			System.out.println("Total no. of words starting with vowel : 'u' are - "+c);
+			t=t+c;
+		}
+		System.out.println("\nTotal no. of words starting with vowels are : "+t);
+	}
+}
+
+public class Main{
+
+	public static void main(String[] args) {
+		AVL avl=new AVL();
+		Scanner sc=new Scanner(System.in);
+		avl.create("brb","Be right back");
+		avl.create("btw","By the way");
+		avl.create("ama", "Ask Me Anything");
+		avl.create("lmk","Let me know");
+		avl.create("gtg","Got to go");
+		avl.create("dm", "Direct Message");
+		avl.create("idk", "I don't know");
+		
+		avl.create("rofl","Rolling on floor laughing");
+		avl.create("stfu", "Shut the *swear word!* up");
+		//avl.create("icymi", "In case you missed it");
+		avl.create("tl","Too long" );
+		avl.create("ikr", "I know right");
+		//avl.create("dr", "Didn’t read");
+		//avl.create("nvm", "Nevermind");
+		//avl.create("tgif","Thank goodness it’s Friday");
+		//avl.create("tbh","To be honest");
+		//avl.create("tbf", "To be frank");
+		avl.create("rn", "Right now");
+		avl.create("qotd","Quote of the day");
+		avl.create("ootd","Outfit of the day");
+		//avl.create("lol","Laugh out loud");
+		avl.create("ttyl", "Talk to you later");
+		//avl.create("hit me up"," Hit me up");
+		//avl.create("fwiw", "For what it’s worth");
+		//avl.create("imo", "In my opinion");
+		//avl.create("imho", "In my humble opinion");
+		//avl.create("idk","I don’t know");
+		avl.create("tba", "To be announced");
+		//avl.create("tbd", "To be decided");
+		
+		int ch;
+		do{
+			System.out.println("**************************** Menu ********************************");
+			System.out.println("1.Find a Word");
+			System.out.println("2.Display words starting with given letter");
+			System.out.println("3.Total no. of words in dictionary");
+			System.out.println("4.Total no. of words starting with given letter");
+			System.out.println("5.Display all words");
+			System.out.println("6.Display Words starting with vowels");//words at 
+			System.out.println("7.Total no. of words starting with vowels");
+			System.out.println("8.Exit");
+			System.out.println("******************************************************************");
+			System.out.println("Enter your choice : ");
+			ch=sc.nextInt();
+			switch(ch)
+			{
+			case 1:
+				
+				avl.findWord(); 
+			break;
+			case 2: 
+				System.out.print("\nEnter the starting letter of the words you want to find : ");
+				String c=sc.next();
+				if(c.length()!=1) {
+					System.out.println("\nEnter a single letter!");
+					break;
+				}
+				else {
+					int j=0;
+				if(avl.displayWordsAt(avl.getRoot(),c,j)==0)
+					System.out.println("No word starts with the letter '"+c+"'");
+				break;
+				}
+			case 3: System.out.println("\nTotal no. of words in the dictionary are : "+avl.totalWordsCount(avl.getRoot())); 
+			break;
+			case 4: System.out.print("\nEnter the starting letter of the words you want to find : ");
+			String b=sc.next();
+			if(b.length()!=1) {
+				System.out.println("\nEnter a single letter!");
+				break;
+			}
+			else {
+			System.out.println(avl.wordCountAt(b.toLowerCase().charAt(0))); 
+			break;
+			}
+			case 5:
+				avl.display(avl.getRoot());
+				break;
+			case 6:
+				avl.wordStartsWithVowel();
+				break;
+			case 7:
+				avl.wordCountStartsWithVowel();
+				break;
+			case 8: System.out.println("Program ended"); 
+			
+			break;
+			default: System.out.println("Invalid option");
+			
+			}
+			} while(ch != 8);
+
+	}
+
+}
