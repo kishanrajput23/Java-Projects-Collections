@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE ejb-jar PUBLIC 
+'-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN' 
+'http://java.sun.com/dtd/ejb-jar_2_0.dtd'>
+
+<ejb-jar>
+  <enterprise-beans>
+    <session>
+      <ejb-name>Order</ejb-name>
+      <home>obs.order.OrderHome</home>
+      <remote>obs.order.Order</remote>
+      <ejb-class>obs.order.OrderBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+    </session>
+ </enterprise-beans>
+  <ejb-client-jar>order_client.jar</ejb-client-jar>
+</ejb-jar>
