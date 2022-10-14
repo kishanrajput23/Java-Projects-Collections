@@ -1,0 +1,83 @@
+<Departments>
+    <Department name="Department 4">
+
+        <Employee name="John">
+            <Salary value="14000" />
+        </Employee>
+
+        <Employee name="Smith">
+            <Salary value="17000" />
+        </Employee>
+
+        <Employee name="Alex">
+            <Salary value="10000" />
+        </Employee>
+
+        <Employee name="Arjun">
+            <Salary value="23400" />
+        </Employee>
+
+    </Department>
+
+    <Department name="Department 2">
+
+        <Employee name="Athul">
+            <Salary value="22400" />
+        </Employee>
+
+        <Employee name="Mohammad">
+            <Salary value="23000" />
+        </Employee>
+
+        <Employee name="Anu">
+            <Salary value="26000" />
+        </Employee>
+
+        <Employee name="Akshay">
+            <Salary value="40000" />
+        </Employee>
+
+    </Department>
+
+    <Department name="Department 3">
+
+        <Employee name="Gabriel">
+            <Salary value="13000" />
+        </Employee>
+
+        <Employee name="Harvey">
+            <Salary value="17000" />
+        </Employee>
+
+        <Employee name="Alen">
+            <Salary value="10000" />
+        </Employee>
+
+        <Employee name="Akbar">
+            <Salary value="21000" />
+        </Employee>
+
+    </Department>
+
+    <Department name="Department 1">
+
+        <Employee name="Elsa">
+            <Salary value="13000" />
+        </Employee>
+
+        <Employee name="Gerald">
+            <Salary value="38000" />
+        </Employee>
+
+        <Employee name="Jamie">
+            <Salary value="24000" />
+        </Employee>
+
+        <Employee name="Anand">
+            <Salary value="35000" />
+        </Employee>
+
+    </Department>
+
+
+</Departments>
