@@ -1,0 +1,6 @@
+Which of these packages contains the exception Stack Overflow in Java?
+a) java.io  b) java.system  c) java.lang   d) java.util
+Which of these class is a superclass of every class in Java?
+a) ArrayList class  b) Abstract class  c) Object class  d) String class
+Which of this method of class String is used to obtain a length of String object?
+a) get()  b) Sizeof()  c) lengthof()  d) length()
