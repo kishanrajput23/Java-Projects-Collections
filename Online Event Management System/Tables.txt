@@ -1,0 +1,29 @@
+Admin Table
+
+create table WBMSlogin( userid varchar2(20) primary key,
+pwd varchar2(20),
+mailid varchar2(20),
+collid varchar2(20),
+dept varchar2(20),
+usertype varchar2(20));
+
+
+MeetingTable
+
+create table MeetingTable( 
+Mname varchar2(25),
+Mdescrip	varchar2(100),
+Mtype		varchar2(25),
+Stimeh		varchar2(10),
+Stimem          varchar2(10),
+StimeAMPM	varchar2(10),
+DurationH	varchar2(20),
+Durationm	varchar2(20),
+Sday		varchar2(20),
+SMonth		varchar2(20),
+Syear		varchar2(20),
+Moptions	varchar2(20),
+Nofpat		varchar2(20),
+pwd		varchar2(20),	
+Collegeid	varchar2(20),
+Emailid		varchar2(20));
