@@ -13,7 +13,7 @@ class Game1{
         System.out.print("Guess a no:");
         Scanner a1 = new Scanner(System.in);
         inputno= a1.nextInt();
-
+        a1.close(); //scanner closed
     }
     public void SetnoofGuesses(int Guesses){
         this.noofGuesses=Guesses;
@@ -41,7 +41,7 @@ class Game1{
     }
 }
 
-
+//starting main function
 public class Game {
     public static void main(String[] args) {
         Game1 gaming=new Game1();
