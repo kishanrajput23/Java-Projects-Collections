@@ -20,10 +20,12 @@ class Game{
         Random rand=new Random();
         Computer_input = rand.nextInt(100);
     }
+    //method for taking input from user
     public void takeUserInput(){
         Scanner input=new Scanner(System.in);
         System.out.println("Enter the Number That you want to guess it :");
         User_input=input.nextInt();
+        input.close(); //input closed
     }
     boolean isCorrectNumber(){
         if(User_input==Computer_input){
@@ -42,8 +44,8 @@ class Game{
 public class Number_Gusses {
     public static void main(String[] args) {
         Game g=new Game();
-            boolean b=false;
-            while(!b){
+        boolean b=false;
+        while(!b){
             g.takeUserInput();
             b= g.isCorrectNumber();
             System.out.println(b);
