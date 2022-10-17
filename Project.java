@@ -12,6 +12,7 @@ public class Project {
         Scanner input=new Scanner(System.in);
         System.out.print("Enter 0 for Rock 1 for Paper 2 for Scissors : ");
         int user_Input=input.nextInt();
+        input.close();//clossing the input
         //randomly takes input from compter....
       
         Random rand=new Random();

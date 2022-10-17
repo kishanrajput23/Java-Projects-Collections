@@ -85,7 +85,7 @@ public class Login_System {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {//On clicking login following operations would be performed
 				
-				String password = txtPassword.getText();
+				String password = txtPassword.get;
 				String username = textField.getText();
 				
 				if(password.contains("king")&& username.contains("one")) {//If the username and password matches
