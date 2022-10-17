@@ -1,0 +1,57 @@
+a:hover {
+	height: auto;
+	width: auto;
+	background-color: #a6ffbb;
+}
+a:link
+{
+background-color: ;
+}
+a:visit
+{
+background-color: #aa33FF ;
+}
+a:active
+{
+background-color: #aa68AFF;
+}
+.bgcolor{	background-color: #aa8AFF;}
+.border{ BORDER : 1px;BORDER-COLOR:#968AFF;BORDER-STYLE:SOLID;color: #0000DD;#9933FF;#968AFF;}
+.cbutton {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-variant: small-caps;
+	color: #CECEFF;
+	background-color: #3399FF;#0066CC;
+	font-weight: bold;
+	}
+
+body {
+	background-color: lightyellow;
+}
+
+body, td, th {
+	color: #8000FF;
+}
+
+h1 {
+	color: #968AFF;
+}
+
+h2 {
+	color: #666699;
+}
+
+h3 {
+	color: #993399;
+}
+
+h6 {
+	color: #333366;
+}
+
+a {
+	color: #968AFF;#5542FF;#00CC33;
+}
