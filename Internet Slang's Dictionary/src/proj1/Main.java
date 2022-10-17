@@ -608,7 +608,7 @@ public class Main{
 			
 			}
 			} while(ch != 8);
-
+			sc.close(); //sc is closed
 	}
 
 }
