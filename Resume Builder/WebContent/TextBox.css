@@ -1,0 +1,97 @@
+
+	.textbox{
+	height: 25px;
+	border:1px solid gray;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	outline:0;
+	width: 300px;
+	
+	}
+	.textbox:hover
+	{
+		border-color: cyan;
+	}
+	
+	.textbox2{
+	height: 25px;
+	border:1px solid gray;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	outline:0;
+	width: 235px;
+	}
+	.textbox2:hover
+	{
+		border-color: cyan;
+	}	
+	
+	.textbox3{
+	height: 25px;
+	border:1px solid gray;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	outline:0;
+	width: 190px;
+	}
+	.textbox3:hover
+	{
+		border-color: cyan;
+	}
+	
+	.textarea{
+	height: 50px;
+	border:1px solid #848484;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	outline:0;
+	width: 300px;
+	}
+	.textarea:hover
+	{
+		border-color: orange;
+	}
+
+	.button{
+	height: 25px;
+	border:1px solid black;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	outline:1;
+	width: 100px;
+	background-color: gray;
+	color:black;
+	font-size: medium;
+	border-bottom-color:black;
+	border-bottom-width:medium;
+	border-right-color: black;
+	border-right-width:medium;
+	}
+	.button:hover
+	{
+		border-color: red;
+	}
+	
+	.selectbx{
+	height: 30px;
+	border:1px solid gray;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	outline:0;
+	width: 200px;
+	}
+	.selectbx:hover
+	{
+		border-color: magenta;
+	}
+	
+	.border{
+	border-width:medium; 
+	border-color:silver;
+	}	
