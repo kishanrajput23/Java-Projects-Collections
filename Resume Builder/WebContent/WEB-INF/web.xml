@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
+	<display-name>Resume Builder</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>controller</servlet-name>
+		<servlet-class>org.pk.resume.builder.controller.BaseController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>controller</servlet-name>
+		<url-pattern>/control</url-pattern>
+	</servlet-mapping>
+</web-app>
