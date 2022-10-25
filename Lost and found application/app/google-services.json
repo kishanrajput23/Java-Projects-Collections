@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "543311147921",
+    "project_id": "bu-finder-6bb4a",
+    "storage_bucket": "bu-finder-6bb4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543311147921:android:355393a9b5bb2bd5526030",
+        "android_client_info": {
+          "package_name": "com.application.bufinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543311147921-g95lnkk7ij4drci77nju8nnon6dcmgqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZUTuw1vUiOz4UdIUpOw5NRJK4C42a9qo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "543311147921-g95lnkk7ij4drci77nju8nnon6dcmgqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
