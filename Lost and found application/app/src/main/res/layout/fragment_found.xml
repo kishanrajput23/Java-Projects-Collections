@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E6D5D5"
+    tools:context=".FoundFragment">
+
+    <RelativeLayout
+        android:id="@+id/relative"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentTop="true">
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/distHelp"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentTop="true"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_toStartOf="@id/more"-->
+        <!--            android:text="Displayed Requests from ALL districts.\nTo change DISTRICT edit below."-->
+        <!--            android:textAlignment="center"-->
+        <!--            android:textSize="12sp" />-->
+
+
+        <LinearLayout
+            android:id="@+id/dist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            tools:ignore="NotSibling">
+
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginEnd="5dp"-->
+            <!--                android:background="@drawable/square_border"-->
+            <!--                android:backgroundTint="#FAF5E4"-->
+            <!--                android:padding="10dp"-->
+            <!--                android:text="District"-->
+            <!--                android:textSize="12sp" />-->
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/districtFilterRequest"-->
+            <!--                android:layout_width="100dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@drawable/square_border"-->
+            <!--                android:backgroundTint="#FAF5E4"-->
+            <!--                android:imeActionLabel=""-->
+            <!--                android:imeOptions="actionDone"-->
+            <!--                android:inputType="textCapCharacters"-->
+            <!--                android:padding="10dp"-->
+            <!--                android:text="ALL"-->
+            <!--                android:textAlignment="center"-->
+            <!--                android:textSize="12sp" />-->
+
+        </LinearLayout>
+
+
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@id/dist"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginBottom="5dp"-->
+        <!--            android:layout_toStartOf="@id/more"-->
+        <!--            android:clickable="true"-->
+        <!--            android:contextClickable="true"-->
+        <!--            android:ellipsize="marquee"-->
+        <!--            android:focusable="true"-->
+        <!--            android:focusableInTouchMode="true"-->
+        <!--            android:fontFamily="@font/varela_round"-->
+        <!--            android:marqueeRepeatLimit="marquee_forever"-->
+        <!--            android:singleLine="true"-->
+        <!--            android:text="If you can help them make CALL or SHARE."-->
+        <!--            android:textAlignment="center" />-->
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/more"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginEnd="10dp"-->
+        <!--            android:onClick="popUp"-->
+        <!--            android:src="@drawable/ic_baseline_more_vert_24"-->
+        <!--            android:tooltipText="More" />-->
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/requestList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/relative1"
+        android:layout_below="@id/relative" />
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!--        <com.google.android.material.button.MaterialButton-->
+
+        <!--            android:id="@+id/btnAddRequest"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_above="@id/btnViewDonors"-->
+        <!--            android:onClick="requestBlood"-->
+        <!--            android:text="Request Blood"-->
+        <!--            android:textAllCaps="false"-->
+        <!--            app:backgroundTint="#EA5050" />-->
+
+        <!--        <com.google.android.material.button.MaterialButton-->
+        <!--            android:id="@+id/btnViewDonors"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="50dp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:onClick="viewDonorsList"-->
+        <!--            android:text="View Donors"-->
+        <!--            android:textAllCaps="false"-->
+        <!--            app:backgroundTint="#6FAFE3" />-->
+
+    </RelativeLayout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FoundFragment">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:clickable="true"
+        android:elevation="8dp"
+        android:onClick="newplus"
+        android:src="@drawable/ic_baseline_add_241"
+        app:backgroundTint="@color/purple_200"
+        app:rippleColor="#FFFFFF"
+        tools:ignore="ContentDescription" />
+
+</FrameLayout>
+</RelativeLayout>

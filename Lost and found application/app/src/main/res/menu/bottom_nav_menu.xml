@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/lost"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Lost" />
+
+    <item
+        android:id="@+id/found"
+        android:icon="@drawable/ic_baseline_shopping_bag_24"
+        android:title="Found" />
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="Settings" />
+
+</menu>
