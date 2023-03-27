@@ -1,0 +1,6 @@
+1.0.1 2016-08-30 56d134a Will Phelps Fixing build issues 
+1.0.1 2016-08-30 56d134a Will Phelps Fixing build issues 
+1.0.1 2016-08-30 56d134a Will Phelps Fixing build issues 
+1.1.0
+ 2016-09-08 76a260f Will Phelps Bug Fix: X Axis Title Position 
+1.1.1 2016-09-08 76a260f Will Phelps Bug Fix: X Axis Title Position 
