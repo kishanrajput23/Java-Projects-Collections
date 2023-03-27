@@ -1,4 +1,4 @@
-[![MasterHead](https://github.com/D-Sensei/D-Sensei/blob/main/image.png)](https://rishavchanda.io)
+[![MasterHead]()](https://rishavchanda.io)
 <h1 align="center">Data Visualisation using Java</h1>
 
 #Introduction
