@@ -10,10 +10,10 @@ Java Data Visualization project designed to make histogramming, plotting, and fi
 - Fitting routines using Minuit
 - GUI tools for easily editing plot attributes and for fitting
 
-#How to run 
+## How to run 
 Unzip src file
 
-Try out the [demo jar](https://github.com/gavalian/groot/raw/master/jars/GrootDemo.jar) and check out the examples on our [Wiki](https://github.com/gavalian/groot/wiki "GROOT Wiki").
+  Check out the examples on our [Wiki](https://github.com/gavalian/groot/wiki "GROOT Wiki").
 
 To run the example: Simply double click on the jar if you're a mac user, or if you're a linux user run ```java -jar GrootDemo.jar```
 
