@@ -1,7 +1,7 @@
 ![MasterHead](https://github.com/D-Sensei/Java-Projects-Collections/blob/main/Data%20Visualisation/k.jpg)
 <h1 align="center">Data Visualisation using Java</h1>
 
-#Introduction
+## Introduction
 Java Data Visualization project designed to make histogramming, plotting, and fitting accessible for Java users. 
 ## Features
 - Histograms 1D/2D
