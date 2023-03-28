@@ -1,0 +1,28 @@
+# https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: GROOT-CI
+
+on:
+  push:
+    branches: [ '**' ]
+  pull_request:
+    branches: [ '**' ]
+  schedule:
+    # NOTE: From what I read, the email notification for cron can only go
+    #       to the last committer of this file!!!!!
+    - cron: '0 22 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: 11
+    - name: build
+      run: mvn install
+

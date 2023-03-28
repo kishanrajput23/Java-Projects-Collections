@@ -1,0 +1,12 @@
+/target/
+
+*.prefs
+
+.classpath
+
+.project
+
+hs_err_pid50650.log
+
+hs_err_pid50363.log
+/bin/
