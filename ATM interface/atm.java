@@ -4,6 +4,10 @@ import java.util.Scanner;
 //create ATMExample class to implement the ATM functionality  
 public class atm 
 {  
+  public static boolean validateInputAmount(Integer amount)
+  {
+    return amount>0;
+  }
     //main method starts   
     public static void main(String args[] )  
     {  
@@ -30,7 +34,12 @@ public class atm
         System.out.print("Enter money to be withdrawn:");  
                       
         //get the withdrawl money from user  
-        withdraw = sc.nextInt();  
+        withdraw = sc.nextInt(); 
+                if(!validateInputAmount(withdraw))
+                {
+                  System.out.println("Enter amount greater than zero");
+                  break;
+                }
                       
         //check whether the balance is greater than or equal to the withdrawal amount  
         if(balance >= withdraw)  
@@ -53,6 +62,11 @@ public class atm
                       
         //get deposite amount from te user  
         deposit = sc.nextInt();  
+                 if(!validateInputAmount(deposit))
+                {
+                  System.out.println("Enter amount greater than zero");
+                  break;
+                }
                       
         //add the deposit amount to the total balanace  
         balance = balance + deposit;  
