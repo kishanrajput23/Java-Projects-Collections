@@ -10,10 +10,10 @@ public class Project {
         //taking input from user...
       
         Scanner input=new Scanner(System.in);
-        System.out.print("Enter 0 for Rock 1 for Paper 2 for Scissors : ");
+        System.out.print("Enter 0 for Rock, 1 for Paper, 2 for Scissors : ");
         int user_Input=input.nextInt();
-        input.close();//clossing the input
-        //randomly takes input from compter....
+        input.close();//closing the input
+        //randomly takes input from computer....
       
         Random rand=new Random();
         int Computer_input=rand.nextInt(3);
