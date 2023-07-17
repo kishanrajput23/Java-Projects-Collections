@@ -566,17 +566,17 @@ public class Calculator {
                 btn9.setBackground(Color.WHITE);
                 btnPoint.setBackground(Color.WHITE);
 
-                btnC.setForeground(Color.WHITE);
-                btnBack.setForeground(Color.WHITE);
-                btnMod.setForeground(Color.WHITE);
-                btnDiv.setForeground(Color.WHITE);
-                btnMul.setForeground(Color.WHITE);
-                btnSub.setForeground(Color.WHITE);
-                btnAdd.setForeground(Color.WHITE);
-                btnEqual.setForeground(Color.WHITE);
-                btnLog.setForeground(Color.WHITE);
-                btnPower.setForeground(Color.WHITE);
-                btnRoot.setForeground(Color.WHITE);
+                btnC.setForeground(new Color(255, 0, 0));
+                btnBack.setForeground(new Color(255, 255, 0));
+                btnMod.setForeground(new Color(0, 128, 0));
+                btnDiv.setForeground(new Color(170, 51, 106));
+                btnMul.setForeground(new Color(170, 51, 106));
+                btnSub.setForeground(new Color(170, 51, 106));
+                btnAdd.setForeground(new Color(170, 51, 106));
+                btnEqual.setForeground(new Color(0, 0, 139));
+                btnLog.setForeground(new Color(170, 51, 106));
+                btnPower.setForeground(new Color(170, 51, 106));
+                btnRoot.setForeground(new Color(170, 51, 106));
                 break;
             case "DarkTheme":
                 final Color primaryDarkColor = new Color(141, 38, 99);

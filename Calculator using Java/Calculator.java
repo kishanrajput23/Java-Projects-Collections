@@ -1,12 +1,11 @@
 package simplejavacalculator;
 
 import static java.lang.Double.NaN;
-
-import static java.lang.Math.log;
-
 import static java.lang.Math.log10;
-
 import static java.lang.Math.pow;
+
+
+
 
 public class Calculator {
 
@@ -22,11 +21,11 @@ public class Calculator {
 
     }
 
-    private Double num1, num2;
+    private double num1, num2;
 
     private BiOperatorModes mode = BiOperatorModes.normal;
 
-    private Double calculateBiImpl() {
+    private double calculateBiImpl() {
 
         if (mode == BiOperatorModes.normal) {
 
@@ -48,7 +47,7 @@ public class Calculator {
 
         if (mode == BiOperatorModes.minus) {
 
-            return num1 – num2;
+            return num1 - num2;
 
         }
 
