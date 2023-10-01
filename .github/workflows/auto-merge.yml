@@ -4,6 +4,8 @@ on:
   pull_request:
     types:
       - synchronize  # Trigger on any changes to the PR
+    branches:
+      - main  # Only trigger on PRs targeting the 'main' branch
 
 jobs:
   auto-merge:
