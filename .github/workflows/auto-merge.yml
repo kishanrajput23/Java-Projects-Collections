@@ -1,0 +1,21 @@
+name: Auto-Merge PR
+
+on:
+  pull_request:
+    types:
+      - synchronize  # Trigger on any changes to the PR
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Merge PR
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git checkout -B auto-merge
+          git pull "${{ github.event.pull_request.head.repo.clone_url }}" "${{ github.event.pull_request.head.ref }}"
+          git push "${{ github.event.pull_request.head.repo.clone_url }}" auto-merge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
