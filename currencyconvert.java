@@ -1,195 +1,73 @@
-package com.exchange;
-
 import java.io.*;
-
 import java.net.*;
-
-import java.util.*;
+import java.util.StringTokenizer;
 
 import javax.servlet.*;
-
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-import java.io.InputStream;
+import com.google.gson.Gson;
 
-import java.net.*;
+@WebServlet("/CurrencyConverter")
+public class CurrencyConverter extends HttpServlet {
 
-import com.google.gson.*;
+    private static final long serialVersionUID = 1L;
 
-/**
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String query = "";
+        String amount = "";
+        String curTo = "";
+        String curFrom = "";
+        String res = "";
 
-*
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
-* @author pakallis
+        /* Read request parameters */
+        amount = request.getParameter("amount");
+        curTo = request.getParameter("to");
+        curFrom = request.getParameter("from");
 
-*/
+        /* Open a connection to Google and read the result */
+        try {
+            query = "http://www.google.com/ig/calculator?hl=en&q=" + amount + curFrom + "=?" + curTo;
+            URL url = new URL(query);
 
-classRecv
+            try (InputStreamReader stream = new InputStreamReader(url.openStream());
+                 BufferedReader in = new BufferedReader(stream)) {
 
-{
+                String str = "";
+                String temp = "";
 
-private String lhs;
+                while ((temp = in.readLine()) != null) {
+                    str = str + temp;
+                }
 
-private String rhs;
+                /* Parse the result which is in JSON format */
+                Gson gson = new Gson();
+                Recv st = gson.fromJson(str, Recv.class);
+                String rhs = st.getRhs();
+                rhs = rhs.replaceAll("�", "");
 
-private String error;
+                /* Check if there are additional words (millions, billions, etc.) and print them */
+                StringTokenizer strto = new StringTokenizer(rhs);
+                String nextToken = strto.nextToken();
+                out.write(nextToken);
 
-private String icc;
+                nextToken = strto.nextToken();
+                if (nextToken.equals("million") || nextToken.equals("billion") || nextToken.equals("trillion")) {
+                    out.println(" " + nextToken);
+                }
+            }
+        } catch (NumberFormatException e) {
+            out.println("The given amount is not a valid number");
+        }
+    }
 
-public Recv(
-
-{
-
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
 }
-
-public String getLhs()
-
-{
-
-return lhs;
-
-}
-
-public String getRhs()
-
-{
-
-return rhs;
-
-}
-
-}
-
-public classConvertextendsHttpServlet {
-
-/**
-
-* Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
-
-* @param request servlet request
-
-* @param response servlet response
-
-* @throws ServletException if a servlet-specific error occurs
-
-* @throws IOException if an I/O error occurs
-
-*/
-
-protected void processRequest(HttpServletRequest req, HttpServletResponse resp)
-
-throws ServletException, IOException {
-
-String query = "";
-
-String amount = "";
-
-String curTo = "";
-
-String curFrom = "";
-
-String submit = "";
-
-String res = "";
-
-HttpSession session;
-
-resp.setContentType("text/html;charset=UTF-8");
-
-PrintWriter out = resp.getWriter();
-
-/*Read request parameters*/
-
-amount = req.getParameter("amount");
-
-curTo = req.getParameter("to");
-
-curFrom = req.getParameter("from");
-
-/*Open a connection to google and read the result*/
-
-try {
-
-query = "http://www.google.com/ig/calculator?hl=en&q=" + amount + curFrom + "=?" + curTo;
-
-URL url = new URL(query);
-
-InputStreamReader stream = new InputStreamReader(url.openStream());
-
-BufferedReader in = new BufferedReader(stream);
-
-String str = "";
-
-String temp = "";
-
-while ((temp = in.readLine()) != null) {
-
-str = str + temp;
-
-}
-
-/*Parse the result which is in json format*/
-
-Gson gson = new Gson();
-
-Recv st = gson.fromJson(str, Recv.class);
-
-String rhs = st.getRhs();
-
-rhs = rhs.replaceAll("�", "");
-
-/*we do the check in order to print the additional word(millions,billions etc)*/
-
-StringTokenizer strto = new StringTokenizer(rhs);
-
-String nextToken;
-
-out.write(strto.nextToken());
-
-nextToken = strto.nextToken();
-
-if( nextToken.equals("million") || nextToken.equals("billion") || nextToken.equals("trillion"))
-
-{
-
-out.println(" "+nextToken);
-
-}
-
-} catch (NumberFormatException e) {
-
-out.println("The given amount is not a valid number");
-
-}
-
-}
-
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-
-/**
-
-* Handles the HTTP <code>GET</code> method.
-
-* @param request servlet request
-
-* @param response servlet response
-
-* @throws ServletException if a servlet-specific error occurs
-
-* @throws IOException if an I/O error occurs
-
-*/
-
-@Override
-
-protected void doGet(HttpServletRequest request, HttpServletResponse response)
-
-throws ServletException, IOException {
-
-processRequest(request, response);
-
-}
-
-/**
-
-* Handles the HTTP <code>POST</co
