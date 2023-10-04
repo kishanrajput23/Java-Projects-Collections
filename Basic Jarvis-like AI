@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Jarvis {
+
+    private SpeechRecognizer speechRecognizer;
+    private TextToSpeech textToSpeech;
+    private NaturalLanguageProcessor nlp;
+    private KnowledgeBase knowledgeBase;
+
+    public Jarvis(SpeechRecognizer speechRecognizer, TextToSpeech textToSpeech, NaturalLanguageProcessor nlp, KnowledgeBase knowledgeBase) {
+        this.speechRecognizer = speechRecognizer;
+        this.textToSpeech = textToSpeech;
+        this.nlp = nlp;
+        this.knowledgeBase = knowledgeBase;
+    }
+
+    public void listenAndRespond() {
+        String userInput = speechRecognizer.recognizeSpeech();
+        String response = nlp.processInput(userInput, knowledgeBase);
+        textToSpeech.speak(response);
+    }
+
+    public static void main(String[] args) {
+        SpeechRecognizer speechRecognizer = new GoogleCloudSpeechRecognizer();
+        TextToSpeech textToSpeech = new GoogleCloudTextToSpeech();
+        NaturalLanguageProcessor nlp = new OpenNLPProcessor();
+        KnowledgeBase knowledgeBase = new WikidataKnowledgeBase();
+
+        Jarvis jarvis = new Jarvis(speechRecognizer, textToSpeech, nlp, knowledgeBase);
+
+        jarvis.listenAndRespond();
+    }
+}
