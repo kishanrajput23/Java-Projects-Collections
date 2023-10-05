@@ -10,7 +10,7 @@ class Game {
         return this.gusses;
     }
 
-    public void setGusses( ) {
+    public void setGusses( int gusses ) {
         this.gusses = gusses;
     }
 
