@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snake Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      canvas {
+        border: 1px solid #000;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Snake Game</h1>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <button id="tryAgain" style="display: none">Try Again</button>
+
+    <script>
+      const canvas = document.getElementById("gameCanvas");
+      const ctx = canvas.getContext("2d");
+      const tryAgainButton = document.getElementById("tryAgain");
+
+      const gridSize = 20;
+      const snakeColor = "#000";
+      const foodColor = "#f00";
+
+      let snake = [{ x: 5, y: 5 }];
+      let food = { x: 10, y: 10 };
+      let dx = 1;
+      let dy = 0;
+      let gameInterval;
+
+      function drawSnake() {
+        snake.forEach((segment) => {
+          ctx.fillStyle = snakeColor;
+          ctx.fillRect(
+            segment.x * gridSize,
+            segment.y * gridSize,
+            gridSize,
+            gridSize
+          );
+        });
+      }
+
+      function drawFood() {
+        ctx.fillStyle = foodColor;
+        ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+      }
+
+      function moveSnake() {
+        const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+        snake.unshift(head);
+
+        if (head.x === food.x && head.y === food.y) {
+          food = generateFood();
+        } else {
+          snake.pop();
+        }
+      }
+
+      function generateFood() {
+        const newFood = {
+          x: Math.floor(Math.random() * (canvas.width / gridSize)),
+          y: Math.floor(Math.random() * (canvas.height / gridSize)),
+        };
+
+        return newFood;
+      }
+
+      function checkCollision() {
+        const head = snake[0];
+
+        if (
+          head.x < 0 ||
+          head.x >= canvas.width / gridSize ||
+          head.y < 0 ||
+          head.y >= canvas.height / gridSize ||
+          snake
+            .slice(1)
+            .some((segment) => segment.x === head.x && segment.y === head.y)
+        ) {
+          gameOver();
+        }
+      }
+
+      function gameOver() {
+        clearInterval(gameInterval);
+        tryAgainButton.style.display = "block";
+        alert("Game Over!");
+      }
+
+      function startGame() {
+        snake = [{ x: 5, y: 5 }];
+        food = generateFood();
+        dx = 1;
+        dy = 0;
+        gameInterval = setInterval(gameLoop, 100);
+        tryAgainButton.style.display = "none";
+      }
+
+      function gameLoop() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        drawSnake();
+        drawFood();
+        moveSnake();
+        checkCollision();
+      }
+
+      document.addEventListener("keydown", (e) => {
+        switch (e.key) {
+          case "ArrowUp":
+            if (dy === 0) {
+              dx = 0;
+              dy = -1;
+            }
+            break;
+          case "ArrowDown":
+            if (dy === 0) {
+              dx = 0;
+              dy = 1;
+            }
+            break;
+          case "ArrowLeft":
+            if (dx === 0) {
+              dx = -1;
+              dy = 0;
+            }
+            break;
+          case "ArrowRight":
+            if (dx === 0) {
+              dx = 1;
+              dy = 0;
+            }
+            break;
+        }
+      });
+
+      tryAgainButton.addEventListener("click", startGame);
+
+      startGame(); // Start the game initially.
+    </script>
+  </body>
+</html>
