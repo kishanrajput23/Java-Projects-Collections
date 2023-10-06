@@ -1,0 +1,60 @@
+package Stacks;
+
+import java.util.Scanner;
+public class arrayImplementation {
+    public static class Stack{
+        int a[]= new int[10];
+        int i =0;
+        int capacity(){
+            return a.length;
+        }
+        void push(int x){
+            if(isFUll()==true){
+                System.out.println("stack is full");
+                return;
+            }
+            a[i]=x;
+            i++;
+        } int peak(){
+            if(i==0){
+                System.out.println("stack is empty");
+                return -1;
+            }
+           int x=a[i-1];
+           return x;
+        }
+        int pop(){
+            if (i==0){
+                System.out.println("Stack is empty");
+                return -1;
+            }  int top =a[i-1];
+             a[i-1]=0;
+             i--;
+             return top;
+        }
+        void display(){
+            for(int j=0;j<=i-1;j++) {
+                System.out.print(a[j]+" ");
+            }
+        } int size(){
+            int s = i;
+            return i;
+        } boolean isEmpty(){
+            if(i==0){
+                System.out.println("stack is empty");
+                return true;
+            }else return false;
+        } boolean isFUll(){
+            if (i==a.length) return true;
+            else return false;
+        }
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the length of array");
+        int input = sc.nextInt();
+        Stack st = new Stack();
+      // now u can call the functions and check it.
+    }
+}
