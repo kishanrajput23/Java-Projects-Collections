@@ -1,0 +1,55 @@
+package Stacks;
+
+public class LLimplementation {
+    public  static class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+        }
+    } public static class LLStacks{
+        Node head = null;
+        int size=0;
+        void display(){
+            Node temp = head;
+            while(temp!=null){
+                System.out.print(temp.data+" ");
+                temp=temp.next;
+            }
+        }
+        void push(int x){
+            Node temp= new Node(x);
+            temp.next= head;
+            head=temp;
+            size++;
+        }
+        int pop(){
+            if(head==null){
+                System.out.println("Linked list is empty");
+                return -1;
+            }
+            int x = head.data;
+            head=head.next;
+            size--;
+            return x;
+        }
+        int peak(){
+            if(head==null){
+                System.out.println("Linked list is empty");
+                return -1;
+            } return head.data;
+        }
+        int  size(){
+            return size;
+        }
+        boolean isEmpty(){
+            if (size==0) return true;
+            else return false;
+        }
+    }
+    public static void main(String[] args) {
+        LLStacks obj = new LLStacks();
+    //call the functions and check
+
+    }
+}
