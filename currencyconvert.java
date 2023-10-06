@@ -48,7 +48,7 @@ public class CurrencyConverter extends HttpServlet {
                 Gson gson = new Gson();
                 Recv st = gson.fromJson(str, Recv.class);
                 String rhs = st.getRhs();
-                rhs = rhs.replaceAll("�", "");
+                rhs = rhs.replace("�", "");
 
                 /* Check if there are additional words (millions, billions, etc.) and print them */
                 StringTokenizer strto = new StringTokenizer(rhs);
