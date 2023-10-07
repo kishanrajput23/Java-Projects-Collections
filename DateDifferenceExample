@@ -1,0 +1,33 @@
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+public class DateDifferenceExample {
+
+    public static void main(String[] args) {
+        // Example dates
+        LocalDate date1 = LocalDate.of(2022, 1, 1); // YYYY, MM, DD
+        LocalDate date2 = LocalDate.now(); // Current date
+
+        // Calculate the difference between dates
+        long daysDifference = getDifferenceInDays(date1, date2);
+        long monthsDifference = getDifferenceInMonths(date1, date2);
+        long yearsDifference = getDifferenceInYears(date1, date2);
+
+        // Display the results
+        System.out.println("Difference in days: " + daysDifference + " days");
+        System.out.println("Difference in months: " + monthsDifference + " months");
+        System.out.println("Difference in years: " + yearsDifference + " years");
+    }
+
+    private static long getDifferenceInDays(LocalDate date1, LocalDate date2) {
+        return ChronoUnit.DAYS.between(date1, date2);
+    }
+
+    private static long getDifferenceInMonths(LocalDate date1, LocalDate date2) {
+        return ChronoUnit.MONTHS.between(date1, date2);
+    }
+
+    private static long getDifferenceInYears(LocalDate date1, LocalDate date2) {
+        return ChronoUnit.YEARS.between(date1, date2);
+    }
+}
