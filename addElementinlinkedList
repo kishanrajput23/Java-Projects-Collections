@@ -1,0 +1,53 @@
+
+import java.util.Scanner;
+
+public class insertioninSortedLL {     
+    public  static  class Node {
+        int data;
+        Node next;
+        Node(int data) {
+            this.data = data;
+        }
+    }
+        public static class Linkedlist2 {
+            Node head = null;
+            Node tail = null;
+
+            void display() {
+                Node temp = head;
+                while (temp != null) {
+                    System.out.print(temp.data + " ");
+                    temp = temp.next;
+                }
+                System.out.println();
+            }
+            void toAddElement(int val) {    //
+                Node n = new Node(val);
+                Node temp = head;
+                Node prev = null;
+                while(temp!=null){
+                     if(temp.data>val)break;
+                    prev=temp;
+                    temp=temp.next;
+                }
+                if(prev!=null){
+                    Node cur=prev.next;
+                    prev.next=n;
+                    n.next=cur;
+                } else {
+                    n.next=head;
+                    head=n;
+                }
+            }  
+        }
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        Linkedlist2 obj = new Linkedlist2();
+        for(int i =1;i<=5;i++){
+            System.out.println("enter the number ");
+            int n =sc.nextInt();
+           obj. toAddElement(n);
+        }
+       obj. display();
+    }
+}

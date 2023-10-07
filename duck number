@@ -1,0 +1,33 @@
+ import java.util.Scanner;
+public class DuckNUMBER {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int rev = 0;
+        int count = 0;
+        int count2 = 0;
+        for (int i = 1; i <= num; i++) {
+            int num2 = num % i;
+            if (num2 == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+            while (num != 0) {
+                int num3 = num % 10;
+                rev = rev * 10 + num3;
+                num = num / 10;
+            }
+            System.out.println(+rev);
+            for (int i = 1; i <= rev; i++) {
+                int num4 = rev % i;
+                if (rev % i == 0) {
+                    count2++;
+                }
+            }
+            if (count2 == 2) {
+                System.out.println(+rev + " : " + "is a twisted prime");
+            }
+        }
+    }
+}
