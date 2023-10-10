@@ -1,0 +1,43 @@
+import javax.crypto.*;
+import java.security.*;
+import java.util.Base64;
+
+public class SecureCommunication {
+
+    public static void main(String[] args) {
+        try {
+            // Generate a secret key for symmetric encryption
+            SecretKey secretKey = generateSecretKey();
+
+            // Simulate two parties communicating over a secure channel
+            String messageToSend = "Hello, secure world!";
+            byte[] encryptedMessage = encryptMessage(messageToSend, secretKey);
+            String decryptedMessage = decryptMessage(encryptedMessage, secretKey);
+
+            System.out.println("Original Message: " + messageToSend);
+            System.out.println("Encrypted Message: " + Base64.getEncoder().encodeToString(encryptedMessage));
+            System.out.println("Decrypted Message: " + decryptedMessage);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static SecretKey generateSecretKey() throws NoSuchAlgorithmException {
+        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+        keyGenerator.init(256); // Key size, you can choose other sizes like 128 or 192
+        return keyGenerator.generateKey();
+    }
+
+    private static byte[] encryptMessage(String message, SecretKey secretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+        Cipher cipher = Cipher.getInstance("AES");
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+        return cipher.doFinal(message.getBytes());
+    }
+
+    private static String decryptMessage(byte[] encryptedMessage, SecretKey secretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+        Cipher cipher = Cipher.getInstance("AES");
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+        byte[] decryptedBytes = cipher.doFinal(encryptedMessage);
+        return new String(decryptedBytes);
+    }
+}
