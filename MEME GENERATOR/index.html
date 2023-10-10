@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./sctick.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body class="main_body">
+    
+    <div class="center">
+      <div>
+        <img id="myImg" />
+      </div>
+      <div class="div_btn">
+        <button class="btn" onclick="myfunc()">Next Meme</button>
+      </div>
+      <button class="btn" a href="javascript:void(0)" onclick="share()">Compartilhar</a>
+      </button> 
+    </div>
+    
+  </body>
+</html>
