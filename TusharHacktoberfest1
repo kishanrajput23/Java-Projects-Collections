@@ -1,0 +1,147 @@
+*******************************************************    School management Project in java   ****************************************************************
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+
+class Student {
+    private String studentId;
+    private String name;
+    
+    public Student(String studentId, String name) {
+        this.studentId = studentId;
+        this.name = name;
+    }
+    
+    public String getStudentId() {
+        return studentId;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    @Override
+    public String toString() {
+        return "Student ID: " + studentId + ", Name: " + name;
+    }
+}
+
+class Course {
+    private String courseId;
+    private String courseName;
+    
+    public Course(String courseId, String courseName) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+    }
+    
+    public String getCourseId() {
+        return courseId;
+    }
+    
+    public String getCourseName() {
+        return courseName;
+    }
+    
+    @Override
+    public String toString() {
+        return "Course ID: " + courseId + ", Name: " + courseName;
+    }
+}
+
+public class SchoolManagementSystem {
+    private static Map<String, Student> students = new HashMap<>();
+    private static Map<String, Course> courses = new HashMap<>();
+    private static Map<String, List<String>> enrollments = new HashMap<>();
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("School Management System");
+            System.out.println("1. Add Student");
+            System.out.println("2. Add Course");
+            System.out.println("3. Enroll Student in Course");
+            System.out.println("4. List Enrolled Students in Course");
+            System.out.println("5. Exit");
+            System.out.print("Enter your choice: ");
+            
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline
+            
+            switch (choice) {
+                case 1:
+                    addStudent(scanner);
+                    break;
+                case 2:
+                    addCourse(scanner);
+                    break;
+                case 3:
+                    enrollStudentInCourse(scanner);
+                    break;
+                case 4:
+                    listEnrolledStudentsInCourse(scanner);
+                    break;
+                case 5:
+                    System.out.println("Exiting the program.");
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
+            }
+        }
+    }
+    
+    private static void addStudent(Scanner scanner) {
+        System.out.print("Enter student ID: ");
+        String studentId = scanner.nextLine();
+        System.out.print("Enter student name: ");
+        String name = scanner.nextLine();
+        
+        Student student = new Student(studentId, name);
+        students.put(studentId, student);
+        System.out.println("Student added successfully.");
+    }
+    
+    private static void addCourse(Scanner scanner) {
+        System.out.print("Enter course ID: ");
+        String courseId = scanner.nextLine();
+        System.out.print("Enter course name: ");
+        String courseName = scanner.nextLine();
+        
+        Course course = new Course(courseId, courseName);
+        courses.put(courseId, course);
+        System.out.println("Course added successfully.");
+    }
+    
+    private static void enrollStudentInCourse(Scanner scanner) {
+        System.out.print("Enter student ID: ");
+        String studentId = scanner.nextLine();
+        System.out.print("Enter course ID: ");
+        String courseId = scanner.nextLine();
+        
+        if (students.containsKey(studentId) && courses.containsKey(courseId)) {
+            enrollments.computeIfAbsent(courseId, k -> new ArrayList<>()).add(studentId);
+            System.out.println("Student enrolled in the course.");
+        } else {
+            System.out.println("Student or course not found. Please check the IDs.");
+        }
+    }
+    
+    private static void listEnrolledStudentsInCourse(Scanner scanner) {
+        System.out.print("Enter course ID: ");
+        String courseId = scanner.nextLine();
+        
+        if (courses.containsKey(courseId)) {
+            List<String> enrolledStudents = enrollments.getOrDefault(courseId, new ArrayList<>());
+            System.out.println("Enrolled students in the course:");
+            for (String studentId : enrolledStudents) {
+                System.out.println(students.get(studentId));
+            }
+        } else {
+            System.out.println("Course not found. Please check the course ID.");
+        }
+    }
+}
