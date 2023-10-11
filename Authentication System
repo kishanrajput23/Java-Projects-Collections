@@ -1,0 +1,47 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class AuthenticationSystem {
+
+    private Map<String, User> users;
+
+    public AuthenticationSystem() {
+        this.users = new HashMap<>();
+    }
+
+    public void registerUser(User user) {
+        this.users.put(user.getUsername(), user);
+    }
+
+    public User login(String username, String password) {
+        User user = this.users.get(username);
+        if (user != null && user.isAuthenticated(password)) {
+            return user;
+        } else {
+            return null;
+        }
+    }
+
+    public static class User {
+
+        private String username;
+        private String password;
+
+        public User(String username, String password) {
+            this.username = username;
+            this.password = password;
+        }
+
+        public String getUsername() {
+            return username;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public boolean isAuthenticated(String password) {
+            return this.password.equals(password);
+        }
+    }
+}
