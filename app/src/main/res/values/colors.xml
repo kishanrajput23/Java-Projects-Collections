@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="llmain">#E3352F</color>
+    <color name="llmainhealthy">#17B542</color>
+    <color name="llmainlessweight">#ECEC57</color>
+    <color name="pinky">#B5BDB5</color>
+</resources>
