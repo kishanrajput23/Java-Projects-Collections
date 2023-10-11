@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Bmi calculator</string>
+    <string name="edtextft">Enter your height(Ft)</string>
+    <string name="edtextin">Enter your height(In)</string>
+    <string name="edtext2">Enter your weight</string>
+    <string name="edtext3">Enter your age</string>
+<string name="edtname">Enter your Name</string>
+    <string name="weltext">BMI Calculator </string>
+    <string name="weltextdwn">___Calculator___ </string>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/llmain"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+
+<!--    <EditText-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:inputType="text"-->
+<!--        android:hint="@string/edtname"-->
+<!--        android:id="@+id/edtname"-->
+<!--        android:ems="10" />-->
+
+
+<!--        <EditText-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/edtext3"-->
+<!--        android:id="@+id/edtage"-->
+<!--        android:inputType="number"-->
+<!--        android:ems="10"/>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="55dp"
+        android:text="@string/weltext"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edtweight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/edtext2"
+        android:inputType="number" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/edtheightft"
+        android:hint="@string/edtextft"
+        android:ems="10" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/edtheightin"
+        android:hint="@string/edtextin"
+        android:ems="10" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate BMI"
+        android:layout_marginTop="11dp"
+        android:id="@+id/but1"
+        android:ems="13"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        android:text="_____Results_____"
+        android:ems="8"
+        android:layout_marginTop="16dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="12dp"
+        />
+
+</LinearLayout>
