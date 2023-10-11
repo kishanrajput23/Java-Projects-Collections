@@ -1,0 +1,30 @@
+@keyframes moveup{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+}
+@keyframes appear{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes add{
+    0%{
+        transform: scale(1);
+        box-shadow: 0 0 1px red;
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

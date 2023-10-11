@@ -1,0 +1,55 @@
+@media screen and (max-width:1250px){
+    html,body{
+        font-size: 15px;
+    }
+    .container{
+        width: 280px;
+    }
+    h1.title{
+        font-size: 31px;
+    }
+    .score-container,
+    .best-container{
+        padding: 3px 10px;
+    }
+    .game-container{
+        margin-top: 10px;
+        width: 280px;
+        height: 280px;
+    }
+    .grid-container,
+    .tile-container{
+        width: 260px;
+        height: 260px;
+    }
+    .grid-row,
+    .tile{
+        height: 22.75%;
+    }
+    .grid-cell,
+    .tile{
+        width: 22.75%;
+    }
+    .grid-row{
+        margin-bottom: 3%;
+    }
+    .grid-cell{
+        margin-right: 3%;
+    }
+    .tile{
+        font-size: 35px;
+    }
+    .tile[data-val="128"],
+    .tile[data-val="256"],
+    .tile[data-val="512"]{
+        font-size: 25px;
+    }
+    .tile[data-val="1024"],
+    .tile[data-val="2048"]{
+        font-size: 21px;
+    }
+
+    .pop-container p{
+        font-size: 30px;
+    }
+}
