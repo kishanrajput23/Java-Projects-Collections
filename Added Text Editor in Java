@@ -1,0 +1,100 @@
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
+import java.io.*;
+import java.util.Scanner;
+
+public class JavaFXTextEditor extends Application {
+    private TextArea textArea;
+    private File currentFile;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("JavaFX Text Editor");
+
+        textArea = new TextArea();
+        textArea.setWrapText(true);
+
+        MenuBar menuBar = createMenuBar();
+
+        BorderPane layout = new BorderPane();
+        layout.setTop(menuBar);
+        layout.setCenter(textArea);
+
+        Scene scene = new Scene(layout, 800, 600);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    private MenuBar createMenuBar() {
+        MenuBar menuBar = new MenuBar();
+
+        // File menu
+        Menu fileMenu = new Menu("File");
+        MenuItem newFile = new MenuItem("New");
+        MenuItem openFile = new MenuItem("Open");
+        MenuItem saveFile = new MenuItem("Save");
+        MenuItem exit = new MenuItem("Exit");
+
+        newFile.setOnAction(e -> newFile());
+        openFile.setOnAction(e -> openFile());
+        saveFile.setOnAction(e -> saveFile());
+        exit.setOnAction(e -> System.exit(0));
+
+        fileMenu.getItems().addAll(newFile, openFile, saveFile, new SeparatorMenuItem(), exit);
+
+        menuBar.getMenus().add(fileMenu);
+
+        return menuBar;
+    }
+
+    private void newFile() {
+        textArea.clear();
+        currentFile = null;
+    }
+
+    private void openFile() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+
+        if (selectedFile != null) {
+            currentFile = selectedFile;
+            try {
+                Scanner scanner = new Scanner(selectedFile);
+                StringBuilder content = new StringBuilder();
+                while (scanner.hasNext()) {
+                    content.append(scanner.nextLine()).append("\n");
+                }
+                textArea.setText(content.toString());
+                scanner.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void saveFile() {
+        if (currentFile == null) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+            currentFile = fileChooser.showSaveDialog(null);
+        }
+
+        if (currentFile != null) {
+            try {
+                FileWriter writer = new FileWriter(currentFile);
+                writer.write(textArea.getText());
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
