@@ -1,0 +1,7 @@
+*********** Order List (2013_07_26) ***********
+Order ID:   1  StaffName:Tesuton test                    Total:$28.0 
+Order ID:   2  StaffName:Toefl Kirai                     Total:$30.0 
+Order ID:   3  StaffName:Kazunori Hayashi                Total:$14.0 
+Order ID:   4  StaffName:Kazunori Hayashi                Total:$14.0 Canceled
+-------------------------------------------------------
+Total sales:$72.0(3)  Canceled:$14.0(1)

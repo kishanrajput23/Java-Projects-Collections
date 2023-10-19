@@ -1,0 +1,5 @@
+*********** Order List (2013_08_15) ***********
+Order ID:   1  StaffName:Kazunori Hayashi                Total:$253.95 
+Order ID:   2  StaffName:Kazunori Hayashi                Total:$125.40 
+-------------------------------------------------------
+Total sales:$379.35(2)  Canceled:$0.0(0)
