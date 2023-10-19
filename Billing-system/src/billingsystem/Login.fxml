@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="pane" prefHeight="400" prefWidth="600" stylesheets="@login.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="billingsystem.MainController">
+   <children>
+      <Button fx:id="login" layoutX="254.0" layoutY="296.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="24.0" prefWidth="93.0" text="Login">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="user" layoutX="226.0" layoutY="166.0" onAction="#handleLogin" />
+      <PasswordField fx:id="pwdFld" layoutX="226.0" layoutY="216.0" onAction="#handleLogin" />
+      <Label layoutX="226.0" layoutY="141.0" prefHeight="25.0" prefWidth="149.0" text="Username" textFill="IVORY" />
+      <Label layoutX="226.0" layoutY="191.0" prefHeight="25.0" prefWidth="149.0" text="Password" textFill="IVORY" />
+      <Label alignment="CENTER" layoutX="151.0" layoutY="52.0" prefHeight="54.0" prefWidth="299.0" text="Restaurant Billing System" textFill="IVORY">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
