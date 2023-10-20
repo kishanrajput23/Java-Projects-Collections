@@ -1,0 +1,4 @@
+DBDriver=oracle.jdbc.driver.OracleDriver
+DBName=jdbc:oracle:thin:@localhost:1522:xe
+User=scott
+Password= tiger

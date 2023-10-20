@@ -1,0 +1,9 @@
+create table members (member_id number(10),member_name varchar2(100), doj date);
+
+create table books (isbn_code varchar2(50), book_name varchar2(50), book_desc varchar2(1000),author_name varchar2(100),subject_name varchar2(100), units_available number(5));
+
+create table member_book_record (rec_id number(18),member_id number(10),isbn_code varchar2(50), doi date, dor date);
+
+create sequence lib_seq start with 101 increment by 1;
+
+
