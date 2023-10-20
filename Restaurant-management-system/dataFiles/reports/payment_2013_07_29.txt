@@ -1,0 +1,4 @@
+*********** Payment List (2013_07_29) ***********
+Order ID:5555  StaffName:Kazunori Hayashi                Work time:0.00 Pay:110.00
+-------------------------------------------------------
+Total payment:$110.0(1)

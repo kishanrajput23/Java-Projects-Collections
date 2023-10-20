@@ -1,0 +1,6 @@
+*********** Payment List (2013_07_26) ***********
+Order ID:1111  StaffName:Tesuton test                    Work time:5.0  Pay:67.5
+Order ID:1212  StaffName:Toefl Kirai                     Work time:3.5  Pay:49.0
+Order ID:5555  StaffName:Kazunori Hayashi                Work time:5.5  Pay:110.0
+-------------------------------------------------------
+Total payment:$226.5(3)
