@@ -1,4 +1,3 @@
-fixes #363
 import java.util.Timer;
 import java.util.TimerTask;
 import java.text.SimpleDateFormat;
