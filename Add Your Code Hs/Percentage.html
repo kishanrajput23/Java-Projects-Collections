@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Percentage Calculator</title>
+    <script>
+        function calculatePercentage() {
+            // Get the number and percentage from user input
+            var number = parseFloat(document.getElementById("number").value);
+            var percentage = parseFloat(document.getElementById("percentage").value);
+
+            // Calculate the percentage
+            var result = (number * percentage) / 100;
+
+            // Display the result
+            document.getElementById("result").innerHTML = percentage + "% of " + number + " is " + result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Percentage Calculator</h1>
+    <form>
+        <label for="number">Enter a Number:</label>
+        <input type="number" id="number" step="0.01" required><br>
+
+        <label for="percentage">Enter Percentage (%):</label>
+        <input type="number" id="percentage" step="0.01" required><br>
+
+        <input type="button" value="Calculate" onclick="calculatePercentage()">
+    </form>
+
+    <div id="result"></div>
+</body>
+</html>
