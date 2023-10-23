@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="rs2xml.jar"/>
+	<classpathentry exported="true" kind="lib" path="sqlitejdbc-v056.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
