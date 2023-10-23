@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compound Interest Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin: 0 auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Compound Interest Calculator</h1>
+        <form>
+            <label for="principal">Principal Amount:</label>
+            <input type="number" id="principal" step="0.01" required><br><br>
+            
+            <label for="rate">Annual Interest Rate (%):</label>
+            <input type="number" id="rate" step="0.01" required><br><br>
+            
+            <label for="time">Time (years):</label>
+            <input type="number" id="time" step="0.01" required><br><br>
+            
+            <label for="compounds">Number of Compounding Periods per Year:</label>
+            <input type="number" id="compounds" required><br><br>
+            
+            <button type="button" onclick="calculateInterest()">Calculate</button>
+        </form>
+        
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateInterest() {
+            const principal = parseFloat(document.getElementById("principal").value);
+            const rate = parseFloat(document.getElementById("rate").value);
+            const time = parseFloat(document.getElementById("time").value);
+            const compounds = parseInt(document.getElementById("compounds").value);
+            
+            const n = compounds;
+            const r = (rate / 100) / n;
+            const nt = n * time;
+            const result = principal * Math.pow(1 + r, nt);
+            
+            document.getElementById("result").innerHTML = `The future value of your investment is $${result.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
