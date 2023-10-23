@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profit and Loss Calculator</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Profit and Loss Calculator</h2>
+        <label for="revenue">Total Revenue:</label>
+        <input type="number"  id="revenue" placeholder="Enter revenue" required>
+
+        <label for="expenses">Total Expenses:</label>
+        <input type="number" id="expenses" placeholder="Enter expenses" required>
+
+        <button onclick="calculateProfitLoss()">Calculate</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateProfitLoss() {
+            const revenue = parseFloat(document.getElementById("revenue").value);
+            const expenses = parseFloat(document.getElementById("expenses").value);
+
+            if (isNaN(revenue) || isNaN(expenses)) {
+                document.getElementById("result").innerHTML = "Please enter valid numbers.";
+            } else {
+                const profitLoss = revenue - expenses;
+                let resultText = "Profit: $";
+
+                if (profitLoss < 0) {
+                    resultText = "Loss: $";
+                }
+
+                resultText += Math.abs(profitLoss).toFixed(2);
+                document.getElementById("result").innerHTML = resultText;
+            }
+        }
+    </script>
+</body>
+</html>
