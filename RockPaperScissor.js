@@ -1,35 +1,46 @@
-function computerPlay() {
-    const choices = ["Rock", "Paper", "Scissors"];
-    const randomIndex = Math.floor(Math.random() * 3);
-    return choices[randomIndex];
-}
+import java.util.Scanner;
+import java.util.Random;
 
-function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
-
-    if (playerSelection === computerSelection) {
-        return "It's a tie!";
+public class RockPaperScissors {
+    public static void main(String[] args) {
+        playGame();
     }
 
-    if (
-        (playerSelection === "rock" && computerSelection === "scissors") ||
-        (playerSelection === "scissors" && computerSelection === "paper") ||
-        (playerSelection === "paper" && computerSelection === "rock")
-    ) {
-        return `You win! ${playerSelection} beats ${computerSelection}`;
+    public static String computerPlay() {
+        String[] choices = {"Rock", "Paper", "Scissors"};
+        Random random = new Random();
+        int randomIndex = random.nextInt(3);
+        return choices[randomIndex];
     }
 
-    return `You lose! ${computerSelection} beats ${playerSelection}`;
-}
+    public static String playRound(String playerSelection, String computerSelection) {
+        playerSelection = playerSelection.toLowerCase();
+        computerSelection = computerSelection.toLowerCase();
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Rock, Paper, or Scissors?").trim();
-        const computerSelection = computerPlay();
-        const roundResult = playRound(playerSelection, computerSelection);
-        console.log(roundResult);
+        if (playerSelection.equals(computerSelection)) {
+            return "It's a tie!";
+        }
+
+        if ((playerSelection.equals("rock") && computerSelection.equals("scissors")) ||
+            (playerSelection.equals("scissors") && computerSelection.equals("paper")) ||
+            (playerSelection.equals("paper") && computerSelection.equals("rock"))) {
+            return "You win! " + playerSelection + " beats " + computerSelection;
+        }
+
+        return "You lose! " + computerSelection + " beats " + playerSelection;
+    }
+
+    public static void playGame() {
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Rock, Paper, or Scissors? ");
+            String playerSelection = scanner.nextLine().trim();
+            String computerSelection = computerPlay();
+            String roundResult = playRound(playerSelection, computerSelection);
+            System.out.println(roundResult);
+        }
+
+        scanner.close();
     }
 }
-
-game();
