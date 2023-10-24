@@ -1,0 +1,16 @@
+5 Choice-1: BENNETT Choice-2: SNU Choice-3: SRM Choice-4: GNIOT Choice-5: AMITY Branch-Choice-1: COMPUTER_SCIENCE Branch-Choice-2: BIOTECH Branch-Choice-3: ECE Branch-Choice-4: MECHANICAL Branch-Choice-5: ECE 
+2 Choice-1: BENNETT Choice-2: SRM Choice-3: SNU Choice-4: GNIOT Choice-5: AMITY Branch-Choice-1: BIOTECH Branch-Choice-2: CIVIL Branch-Choice-3: MECHANICAL Branch-Choice-4: ECE Branch-Choice-5: COMPUTER_SCIENCE 
+
+2 Choice-1: BENNETT Choice-2: SNU Choice-3: AMITY Choice-4: SRM Choice-5: GNIOT Branch-Choice-1: CIVIL Branch-Choice-2: BIOTECH Branch-Choice-3: MECHANICAL Branch-Choice-4: ECE Branch-Choice-5: COMPUTER_SCIENCE 
+
+3 Choice-1: GNIOT Choice-2: SRM Choice-3: GNIOT Choice-4: BENNETT Choice-5: SNU Branch-Choice-1: MECHANICAL Branch-Choice-2: ECE Branch-Choice-3: CIVIL Branch-Choice-4: MECHANICAL Branch-Choice-5: ECE 
+
+3 Choice-1: SRM Choice-2: GNIOT Choice-3: SRM Choice-4: SNU Choice-5: AMITY Branch-Choice-1: COMPUTER_SCIENCE Branch-Choice-2: MECHANICAL Branch-Choice-3: BIOTECH Branch-Choice-4: CIVIL Branch-Choice-5: BIOTECH 
+
+2 Choice-1: GNIOT Choice-2: SRM Choice-3: SNU Choice-4: BENNETT Choice-5: SRM Branch-Choice-1: COMPUTER_SCIENCE Branch-Choice-2: MECHANICAL Branch-Choice-3: ECE Branch-Choice-4: MECHANICAL Branch-Choice-5: CIVIL 
+
+2 Choice-1: BENNETT Choice-2: GNIOT Choice-3: AMITY Choice-4: SRM Choice-5: AMITY Branch-Choice-1: ECE Branch-Choice-2: MECHANICAL Branch-Choice-3: COMPUTER_SCIENCE Branch-Choice-4: BIOTECH Branch-Choice-5: CIVIL 
+
+2 Choice-1: AMITY Choice-2: GNIOT Choice-3: BENNETT Choice-4: SNU Choice-5: SRM Branch-Choice-1: COMPUTER_SCIENCE Branch-Choice-2: MECHANICAL Branch-Choice-3: ECE Branch-Choice-4: MECHANICAL Branch-Choice-5: BIOTECH 
+
+101 Choice-1: AMITY Choice-2: SNU Choice-3: AMITY Choice-4: SNU Choice-5: SRM Branch-Choice-1: ECE Branch-Choice-2: COMPUTER_SCIENCE Branch-Choice-3: BIOTECH Branch-Choice-4: ECE Branch-Choice-5: CIVIL 
