@@ -1,0 +1,3 @@
+[submodule "UDP_VIDEO_CALLER"]
+	path = UDP_VIDEO_CALLER
+	url = https://github.com/Adidem23/UDP_VideoCaller.git
