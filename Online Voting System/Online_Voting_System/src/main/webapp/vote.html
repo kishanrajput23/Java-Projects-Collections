@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Vote Here</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<!--javascript-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Rubik', sans-serif;
+   background: #fee028;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  height: 100vh;
+}
+.left-section {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-animation-name: left-section;
+          animation-name: left-section;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.right-section {
+  flex: 1;
+  
+}
+.header > h1 {
+  margin: 0;
+  color: #f50629;
+}
+.header > h4 {
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.form {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.form > p {
+  text-align: right;
+}
+.form > p > a {
+  color: #000;
+  font-size: 14px;
+}
+.form-field {
+  height: 46px;
+  padding: 0 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Rubik', sans-serif;
+  outline: 0;
+  transition: .2s;
+  margin-top: 20px;
+}
+.form-field:focus {
+  border-color: #0f7ef1;
+}
+.form > button {
+  padding: 12px 10px;
+  border: 0;
+  background: linear-gradient(to right, #f50629 0%, #fd9d08 100%);
+  border-radius: 3px;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: 'Rubik', sans-serif;
+}
+.animation {
+  -webkit-animation-name: move;
+          animation-name: move;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+ 
+.a1 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+.a2 {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+.a3 {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+.a4 {
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s;
+}
+.a5 {
+  -webkit-animation-delay: 2.4s;
+          animation-delay: 2.4s;
+}
+.a6 {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes left-section {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    padding: 20px 40px;
+    width: 440px;
+  }
+}
+    </style>
+<body>
+
+<div class="container">
+  <div class="left-section">
+    <div class="header">
+      <h1 class="animation a1">Cast Your Vote</h1>
+      <h4 class="animation a2">"Choose the right!"</h4>
+    </div>
+    <form action="vote" method="post">
+    <div class="form">
+<input type="number" placeholder="Voter card Number" name="cardno" required><br>
+<b>Select Party You want to vote:</b><br>
+<select name="party" class="form-item__element form-item__element--select" required> 
+<option disabled selected value=" ">Please select value</option> 
+<option>Bahujan Samaj Party(BSP)</option>  
+<option>Bharatiya Janata Party(BJP)</option>  
+<option>Communist Party of India</option>
+<option>Communist Party of India (Marxist)</option> 
+<option>Indian National Congress</option> 
+<option>All India Trinamool Congress</option> 
+<option>Aam Aadmi Party(AAP)</option>  
+<option>None of Above</option>
+</select> 
+      
+       <button class="animation a6">VOTE</button>
+
+
+    </div>
+    </form>
+  </div>
+  <div class="right-section"></div>
+</div>
+  
+</body>
+</html>
