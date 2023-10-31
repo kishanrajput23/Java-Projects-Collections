@@ -1,0 +1,31 @@
+@font-face {
+    font-family: dosisbold;
+    src: url(../font/dosis.bold.woff);
+}
+
+html {
+    font-family: dosisbold;
+}
+
+table {
+    color: goldenrod;
+    text-align: center;
+    font-size: 100;
+    border-spacing: 0;
+    padding: 66;
+    border-radius: 10px;
+    background-color: black;
+    margin: auto;
+}
+
+td {
+    width: 200;
+    height: 200;
+    padding: 0;
+    border-radius: 10px;
+}
+
+p {
+    font-size: 42;
+    text-align: center;
+}
