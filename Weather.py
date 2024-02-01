@@ -3,36 +3,38 @@ def main():
     NUMBER_OF_HOURS = 24
 
     # Initialize data
-    data = [] 
-    for i in range(NUMBER_OF_DAYS):
-        data.append([])
-        for j in range(NUMBER_OF_HOURS):
-            data[i].append([])
-            data[i][j].append(0) # Temperature value
-            data[i][j].append(0) # Humidity value
+    data = initialize_data(NUMBER_OF_DAYS, NUMBER_OF_HOURS)
 
     # Read input using input redirection from a file
-    for k in range(NUMBER_OF_DAYS * NUMBER_OF_HOURS):
-        line = input().strip().split()
-        day = eval(line[0]) 
-        hour = eval(line[1]) 
-        temperature = eval(line[2]) 
-        humidity = eval(line[3]) 
-        data[day - 1][hour - 1][0] = temperature
-        data[day - 1][hour - 1][1] = humidity
+    read_input(data, NUMBER_OF_DAYS, NUMBER_OF_HOURS)
 
-    # Find the average daily temperature and humidity
-    for i in range(NUMBER_OF_DAYS):
-        dailyTemperatureTotal = 0
-        dailyHumidityTotal = 0
-        for j in range(NUMBER_OF_HOURS):
-            dailyTemperatureTotal += data[i][j][0]
-            dailyHumidityTotal += data[i][j][1]
+    # Find and display the average daily temperature and humidity
+    calculate_and_display_averages(data, NUMBER_OF_DAYS, NUMBER_OF_HOURS)
+
+
+def initialize_data(num_days, num_hours):
+    """Initialize a 3D list for storing temperature and humidity data."""
+    return [[[0, 0] for _ in range(num_hours)] for _ in range(num_days)]
+
+
+def read_input(data, num_days, num_hours):
+    """Read input data and populate the data list."""
+    for _ in range(num_days * num_hours):
+        line = input().strip().split()
+        day, hour, temperature, humidity = map(eval, line)
+        data[day - 1][hour - 1] = [temperature, humidity]
+
+
+def calculate_and_display_averages(data, num_days, num_hours):
+    """Calculate and display the average daily temperature and humidity."""
+    for i in range(num_days):
+        daily_temperature_total = sum(data[i][j][0] for j in range(num_hours))
+        daily_humidity_total = sum(data[i][j][1] for j in range(num_hours))
 
         # Display result
-        print("Day" + str(i) + "'s average temperature is " 
-            + str(dailyTemperatureTotal / NUMBER_OF_HOURS))
-        print("Day " + str(i) + "'s average humidity is " 
-            + str(dailyHumidityTotal / NUMBER_OF_HOURS))
+        print(f"Day {i + 1}'s average temperature is {daily_temperature_total / num_hours:.2f}")
+        print(f"Day {i + 1}'s average humidity is {daily_humidity_total / num_hours:.2f}")
 
-main() # Call the main function
+
+if __name__ == "__main__":
+    main()  # Call the main function
