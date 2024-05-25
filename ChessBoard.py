@@ -1,5 +1,4 @@
 import turtle
-
 # Draw chess board borders
 turtle.pensize(3) # Set pen thickness to 3 pixels
 turtle.penup() # Pull the pen up
