@@ -1,69 +1,125 @@
-package emailgenerator;
+package Email_App;
 
 import java.util.Scanner;
 
-public class EmailBackProgram {
-	private String firstname;
-	private String lastname;
+public class Email {
+	private String firstName;
+	private String lastName;
 	private String password;
 	private String department;
 	private String email;
-	private int mailboxCapacity = 500;
-	private int defaultPasswordLength = 10;
-	private String alternateEmail;
-	private String companySuffix = "xyzemail.com";
-	
-	public EmailBackProgram(String firstname, String lastname) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-		
-		this.department = setDepartment();
-		
-		this.password = randomPassword(defaultPasswordLength);
-		System.out.println("Your Password is: " + this.password);
-		
-		email = firstname.toLowerCase() + "." + lastname.toLowerCase() + "@" + department + "." + companySuffix;
+	private int defaultPasswordLength=8;
+	private int codelen=5;
+	private String Vcode;
+	private String company="drngpit.ac.in";
+	private String name;
+
+	public Email(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		System.out.println("Kindly ! Enter department for email creation dear "+this.firstName+" "+this.lastName);
+		//dept
+		this.department=setDepartment();
+		System.out.println("Department:"+department);
+		//pass
+		this.password=randomPass(defaultPasswordLength);
+		System.out.println("New Password :"+password);
+		//clipping name as one
+		this.name=firstName+lastName;
+		//verification code
+		this.Vcode=vcode(codelen);
+		System.out.println("Your verification code : "+Vcode);
+
+		//Binding
+		email=name.toLowerCase()+"."+department+"@"+company;
+		System.out.println("Official mail :"+email);
 	}
-	
-	private String setDepartment() {
-		System.out.print("Welcome!! " + firstname + "."+" You are Our New Employee." + " \nChoose Department Codes\n1 C++\n2 Java\n3 Python\n0 None\nEnter Department Code: ");
-		Scanner in = new Scanner(System.in);
-		int depChoice = in.nextInt();
-		if(depChoice == 1) {return "C++";}
-		else if(depChoice == 2) {return "Java";}
-		else if(depChoice == 3) {return "Python";}
-		else {return "";}
-	}
-	
-	private String randomPassword(int length) {
-		String passwordSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*^";
-		char [] password = new char[length];
-		for(int i = 0; i<length;i++) {
-			int rand = (int)(Math.random()*passwordSet.length());
-			password[i] = passwordSet.charAt(rand);
+
+	private String setDepartment(){
+		System.out.println("Enter the department Id\nSales : 1\nDevelopment : 2\nAccounting : 3");
+		Scanner in=new Scanner(System.in);
+		int dep=in.nextInt();
+		if(dep==1){
+			return "sales";
 		}
-		return new String(password);
+		else if(dep==2){
+			return"dev";
+		}
+		else if(dep==3){
+			return "acc";
+		}
+		return"";
 	}
-	
-	public void setMailboxCapacity(int capacity) {
-		this.mailboxCapacity = capacity;
+
+	private String randomPass(int length){
+		String password="ABCEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%";
+		char[]pass=new char[length];
+		for(int i=0;i<length;i++){
+			int rand=(int)(Math.random()*password.length());
+			pass[i]=password.charAt(rand);
+		}
+		return new String(pass);
 	}
-	
-	public void setAlternateEmail(String altEmail) {
-		this.alternateEmail = altEmail;	
+	private String vcode(int codelen){
+		String samcode="1234567890";
+		char[]code=new char[codelen];
+		for(int i=0;i<codelen;i++){
+			int c=(int)(Math.random()*samcode.length());
+			code[i]=samcode.charAt(c);
+		}
+		return new String(code);
 	}
-	
-	public void changePassword(String password) {
+
+	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	public int getMailboxCapacity() {return mailboxCapacity;}
-	public String getAlternateEmail() {return alternateEmail;}
-	public String getPassword() {return password;}
-	
-	public String showInfo() {
-		return "Display Name: " + firstname + " " + lastname + 
-				"\nCompany Email: " + email + 
-				"\nMailbox Capacity: " + mailboxCapacity + "mb";
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getPassword(){
+		return password;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getVcode() {
+		return Vcode;
+	}
+	public String getDept(String dep){
+		if(dep.equals("dev")){
+			return "Developers";
+		}
+		else if(dep.equals("acc")){
+			return "Accounts";
+		}
+		else if(dep.equals("sales")){
+			return "Sales";
+		}
+		return "";
+
+	}
+	public String showInfo(){
+		return "Name : "+name+"\nOfficial email : "+email+"\nDepartment : "+getDept(department);
 	}
 }
