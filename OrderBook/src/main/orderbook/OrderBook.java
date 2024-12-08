@@ -34,15 +34,23 @@ public class OrderBook {
         return true;
     }
     
-    public void viewOrder() {
+    public void viewOrders() {
         System.out.println("Buy Orders are: ");
-        for(Map.Entry<Double, List<Order>> entry : buyOrders.entrySet()) {
-            System.out.println("Price: "+entry.getKey()+" -> "+entry.getValue());
+        if(!buyOrders.isEmpty()) {
+            for(Map.Entry<Double, List<Order>> entry : buyOrders.entrySet()) {
+                System.out.println("Price: "+entry.getKey()+" -> "+entry.getValue());
+            }
+        } else {
+            System.out.println("No buy orders.");
         }
 
-        System.out.println("Sell Order are: ");
-        for(Map.Entry<Double, List<Order>> entry : sellOrders.entrySet()) {
-            System.out.println("Price: "+entry.getKey()+" -> "+entry.getValue());
+        System.out.println("Sell Orders are: ");
+        if(!sellOrders.isEmpty()) {
+            for(Map.Entry<Double, List<Order>> entry : sellOrders.entrySet()) {
+                System.out.println("Price: "+entry.getKey()+" -> "+entry.getValue());
+            }
+        } else {
+            System.out.println("No sell orders.");
         }
     }
 
