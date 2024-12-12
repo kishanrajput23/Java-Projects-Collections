@@ -1,63 +1,68 @@
-package orderbook;
-
 import java.util.Scanner;
 
 public class OrderBookApp {
-    
+
     public static void main(String[] args) {
+        Orderbook ob = new Orderbook(true);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("""
+                             ___          _           ____              _         __    _                  \r
+                            / _ \\ _ __ __| | ___ _ __| __ )  ___   ___ | | __    / /   (_) __ ___   ____ _ \r
+                           | | | | '__/ _` |/ _ \\ '__|  _ \\ / _ \\ / _ \\| |/ /   / /    | |/ _` \\ \\ / / _` |\r
+                           | |_| | | | (_| |  __/ |  | |_) | (_) | (_) |   <   / /     | | (_| |\\ V / (_| |\r
+                            \\___/|_|  \\__,_|\\___|_|  |____/ \\___/ \\___/|_|\\_\\ /_/     _/ |\\__,_| \\_/ \\__,_|\r
+                                                                                     |__/                  """ //
+        //
+        //
+        //
+        //
+        );
+        while (true) {
+            System.out.println("Options\n-----------------------------------\n|1. Print Orderbook               |\n|2. Submit order                  |\n|3. Exit                          |\n-----------------------------------\nChoice: ");
+            int action = scanner.nextInt();
 
-        OrderBook orderBook = new OrderBook();
-        Scanner sc = new Scanner(System.in);
+            if (action == 1) {
+                ob.print();
+            } else if (action == 2) {
+                System.out.println("Enter order type:\n1. Market order\n2. Limit order\nSelection: ");
+                int orderTypeInput = scanner.nextInt();
+                String orderType = (orderTypeInput == 1) ? "MARKET" : "LIMIT";
 
-        while(true) {
+                System.out.println("\nEnter side:\n1. Buy\n2. Sell\nSelection: ");
+                int sideInput = scanner.nextInt();
+                String side = (sideInput == 1) ? "BUY" : "SELL";
 
-            System.out.println("---ORDER BOOK MENU---");
-            System.out.println("1) Add Order");
-            System.out.println("2) View Orders");
-            System.out.println("3) Delete Order");
-            System.out.println("4) Exit");
+                System.out.println("\nEnter order quantity: ");
+                int quantity = scanner.nextInt();
 
-            int choice = sc.nextInt();
-            String id;
+                if (orderType.equals("MARKET")) {
+                    System.out.println("\nSubmitting market " + (side.equals("BUY") ? "buy" : "sell")
+                            + " order for " + quantity + " units..\n");
 
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter OrderId: ");
-                    id = sc.next();
-                    System.out.print("Enter Price: ");
-                    double price = sc.nextDouble();
-                    System.out.print("Enter quantity: ");
-                    int quantity = sc.nextInt();
-                    System.out.print("Is it a Buy Order(true/false): ");
-                    boolean isBuyOrder = sc.nextBoolean();
-                    orderBook.addOrder(new Order(id, price, quantity, isBuyOrder));
-                    System.out.println("Order added successfully!");
-                    break;
-                case 2:
-                    orderBook.viewOrders();
-                    break;
-                case 3:
-                    if(orderBook.buyOrders.isEmpty() && orderBook.sellOrders.isEmpty()) {
-                        System.out.println("There are no orders to be removed.");
-                        break;
-                    }
-                    System.out.print("Enter the OrderId to be removed: ");
-                    id = sc.next();
-                    boolean isRemoved = orderBook.removeOrders(id);
-                    if(isRemoved) {
-                        System.out.println("Order Removed Successfully!");
-                    } else {
-                        System.out.println("No such order.");
-                    }
-                    break;
-                case 4: 
-                    System.out.println("exited.");
-                    sc.close();
-                    return;
+                    long startTime = System.nanoTime();
+                    OrderFill fill = ob.handleOrder(orderType, quantity, side, 0.0);
+                    long endTime = System.nanoTime();
 
-                default:
-                    System.out.println("Invalid choice, please try again.");
+                    Helpers.printFill(fill, quantity, startTime, endTime);
+                } else if (orderType.equals("LIMIT")) {
+                    System.out.println("\nEnter limit price: ");
+                    double price = scanner.nextDouble();
+
+                    System.out.println("\nSubmitting limit " + (side.equals("BUY") ? "buy" : "sell")
+                            + " order for " + quantity + " units @ \u20B9" + price + "..\n");
+
+                    long startTime = System.nanoTime();
+                    OrderFill fill = ob.handleOrder(orderType, quantity, side, price);
+                    long endTime = System.nanoTime();
+
+                    Helpers.printFill(fill, quantity, startTime, endTime);
+                }
+                System.out.println();
+            } else if(action == 3) {
+                break;
             }
         }
+        scanner.close();
+        System.out.println("Program terminated.");
     }
 }

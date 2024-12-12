@@ -1,57 +1,144 @@
-package orderbook;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+class Order {
+    int quantity;
+    double price;
+    String side;
 
-public class OrderBook {
-    
-    TreeMap<Double, List<Order>> buyOrders = new TreeMap<>(Collections.reverseOrder());
-    TreeMap<Double, List<Order>> sellOrders = new TreeMap<>();
-    HashMap<String, Order> orderMap = new HashMap<>();
-
-    public void addOrder(Order order) {
-        TreeMap<Double, List<Order>> refTreeMap = order.getIsBuyOrder() ? buyOrders : sellOrders;
-        refTreeMap.putIfAbsent(order.getPrice(), new ArrayList<>());
-        refTreeMap.get(order.getPrice()).add(order);
-        orderMap.put(order.getId(), order);
+    Order(int quantity, double price, String side) {
+        this.quantity = quantity;
+        this.price = price;
+        this.side = side;
     }
-    
-    public boolean removeOrders(String orderId) {
-        Order order = orderMap.remove(orderId);
-        if(order==null) {
-            return false;
+}
+
+final class Orderbook {
+    private final TreeMap<Double, List<Order>> bids = new TreeMap<>(Collections.reverseOrder());
+    private final TreeMap<Double, List<Order>> asks = new TreeMap<>();
+
+    public Orderbook(boolean generateDummies) {
+        if (generateDummies) {
+            Random random = new Random(12);
+
+            for (int i = 0; i < 10; i++) {
+                double randomPrice = 90.0 + random.nextInt(1001) / 100.0;
+                addOrder(random.nextInt(100) + 1, randomPrice, "BUY");
+                addOrder(random.nextInt(100) + 1, randomPrice, "BUY");
+            }
+            
+            for (int i = 0; i < 10; i++) {
+                double randomPrice = 100.0 + random.nextInt(1001) / 100.0;
+                addOrder(random.nextInt(100) + 1, randomPrice, "SELL");
+                addOrder(random.nextInt(100) + 1, randomPrice, "SELL");
+            }
+            
         }
-        TreeMap<Double, List<Order>> refTreeMap = order.getIsBuyOrder() ? buyOrders : sellOrders;
-        List<Order> ordersAtPrice = refTreeMap.get(order.getPrice());
-        ordersAtPrice.remove(order);
-        if(ordersAtPrice.isEmpty()) {
-            refTreeMap.remove(order.getPrice());
-        }
-        return true;
     }
-    
-    public void viewOrders() {
-        System.out.println("Buy Orders are: ");
-        if(!buyOrders.isEmpty()) {
-            for(Map.Entry<Double, List<Order>> entry : buyOrders.entrySet()) {
-                System.out.println("Price: "+entry.getKey()+" -> "+entry.getValue());
+
+    public void addOrder(int qty, double price, String side) {
+        Order order = new Order(qty, price, side.equals("BUY") ? "BUY" : "SELL");
+        TreeMap<Double, List<Order>> book = side.equals("BUY") ? bids : asks;
+
+        book.computeIfAbsent(price, k -> new ArrayList<>()).add(order);
+    }
+
+    public void print() {
+        System.out.println("========== Orderbook =========");
+        printLeg(asks, "ASK");
+
+        double bestAsk = bestQuote("SELL");
+        double bestBid = bestQuote("BUY");
+        System.out.println("====== " + String.format("%.2f", (bestAsk - bestBid) / bestBid * 10000) + "bps ======");
+
+        printLeg(bids, "BUY");
+        System.out.println("==============================\n\n");
+    }
+
+    private void printLeg(TreeMap<Double, List<Order>> book, String side) {
+        if (side.equals("ASK")) {
+            for (Map.Entry<Double, List<Order>> entry : book.entrySet()) {
+                printPriceLevel(entry.getKey(), entry.getValue(), "31");
             }
         } else {
-            System.out.println("No buy orders.");
-        }
-
-        System.out.println("Sell Orders are: ");
-        if(!sellOrders.isEmpty()) {
-            for(Map.Entry<Double, List<Order>> entry : sellOrders.entrySet()) {
-                System.out.println("Price: "+entry.getKey()+" -> "+entry.getValue());
+            NavigableSet<Double> descendingKeys = book.navigableKeySet().descendingSet();
+            for (Double key : descendingKeys) {
+                printPriceLevel(key, book.get(key), "32");
             }
-        } else {
-            System.out.println("No sell orders.");
         }
     }
 
+    private void printPriceLevel(double price, List<Order> orders, String color) {
+        int totalQuantity = 0;
+        for (Order order : orders) {
+            totalQuantity += order.quantity;
+        }
+        System.out.printf("\t\033[1;%sm\u20B9%6.2f%5d\033[0m ", color, price, totalQuantity);
+        for (int i = 0; i < totalQuantity / 10; i++) {
+            System.out.print("█");
+        }
+        System.out.println();
+    }
+
+    private double bestQuote(String side) {
+        TreeMap<Double, List<Order>> book = side.equals("BUY") ? bids : asks;
+        return book.isEmpty() ? 0.0 : book.firstKey();
+    }
+
+    
+
+    public OrderFill handleOrder(String type, int orderQuantity, String side, double price) {
+        int unitsTransacted = 0;
+        double totalValue = 0.0;
+
+        TreeMap<Double, List<Order>> book = side.equals("BUY") ? asks : bids;
+
+        Iterator<Map.Entry<Double, List<Order>>> iterator = book.entrySet().iterator();
+        while (iterator.hasNext() && orderQuantity > 0) {
+            Map.Entry<Double, List<Order>> entry = iterator.next();
+            double priceLevel = entry.getKey();
+
+            if (type.equals("LIMIT") && ((side.equals("BUY") && priceLevel > price) 
+            || (side.equals("SELL") && priceLevel < price))) {
+                break;
+            }
+
+            List<Order> orders = entry.getValue();
+            Iterator<Order> orderIterator = orders.iterator();
+            while (orderIterator.hasNext() && orderQuantity > 0) {
+                Order order = orderIterator.next();
+
+                if (order.quantity > orderQuantity) {
+                    unitsTransacted += orderQuantity;
+                    totalValue += orderQuantity * priceLevel;
+                    order.quantity -= orderQuantity;
+                    orderQuantity = 0;
+                } else {
+                    unitsTransacted += order.quantity;
+                    totalValue += order.quantity * priceLevel;
+                    orderQuantity -= order.quantity;
+                    orderIterator.remove();
+                }
+            }
+
+            if (orders.isEmpty()) {
+                iterator.remove();
+            }
+        }
+
+        if (type.equals("LIMIT") && orderQuantity > 0) {
+            addOrder(orderQuantity, price, side.equals("BUY") ? "BUY" : "SELL");
+        }
+
+        return new OrderFill(unitsTransacted, totalValue);
+    }
+}
+
+class OrderFill {
+    int unitsTransacted;
+    double totalValue;
+
+    OrderFill(int unitsTransacted, double totalValue) {
+        this.unitsTransacted = unitsTransacted;
+        this.totalValue = totalValue;
+    }
 }
