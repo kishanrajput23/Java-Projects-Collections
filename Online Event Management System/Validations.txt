@@ -1,0 +1,31 @@
+function valid1(){
+	if(document.f1.fname.value==""){
+		alert("Please enter your  name");
+		document.f1.fname.focus();
+		return false;
+	}
+	if(document.f1.fdes.value==""){
+		alert("Please enter your Designation");
+		document.f1.fdes.focus();
+		return false;
+	}
+	if(document.f1.fquali.value==""){
+		alert("Please enter your Qualification");
+		document.f1.fquali.focus();
+		return false;
+	}	
+	if(document.f1.years.value=="select") {
+		alert("Please select your Experinece in Years");
+		document.f1.years.focus();
+		return false;
+	}
+	if(document.f1.months.value=="select") {
+		alert("Please select your Experinece in Months");
+		document.f1.months.focus();
+		return false;
+	}
+	if(document.f1.edu.value=="select"){
+		alert("Please select Education field");
+		document.f1.edu.focus();
+		return false;
+	}

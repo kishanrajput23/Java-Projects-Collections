@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jlab</groupId>
+    <artifactId>groot</artifactId>
+    <version>4.0.4-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.objecthunter</groupId>
+            <artifactId>exp4j</artifactId>
+            <version>0.4.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jlab.jnp</groupId>
+            <artifactId>jnp-hipo</artifactId>
+            <version>2.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jlab.jnp</groupId>
+            <artifactId>jnp-hipo4</artifactId>
+            <version>4.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jlab.jnp</groupId>
+            <artifactId>jnp-graphics</artifactId>
+            <version>2.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.freehep/freehep-jminuit -->
+        <dependency>
+            <groupId>org.freehep</groupId>
+            <artifactId>freehep-jminuit</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>org.jfree.pdf</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jfree</groupId>
+            <artifactId>org.jfree.svg</artifactId>
+            <version>4.2</version>
+        </dependency>
+
+
+        <!--      <dependency>
+                <groupId>org.freehep</groupId>
+            <artifactId>jminuit</artifactId>
+                <version>1.0.2</version>
+              </dependency>
+        -->
+        <dependency>
+            <groupId>net.miginfocom</groupId>
+            <artifactId>miglayout</artifactId>
+            <version>4.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>clas12maven</id>
+            <url>https://clasweb.jlab.org/clas12maven</url>
+        </repository>
+        <repository>
+            <id>jnp-maven</id>
+            <url>https://clasweb.jlab.org/jhep/maven</url>
+        </repository>
+        <repository>
+            <!--<id>freehep</id>
+            <url>https://java.freehep.org/maven2</url>-->
+            <id>freehep-repo-public</id>
+            <url>https://srs.slac.stanford.edu/nexus/content/groups/freehep-maven2-public/</url>
+        </repository>
+    </repositories>
+
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh-external</artifactId>
+                <version>2.8</version>
+            </extension>
+        </extensions>
+        <plugins>
+	  <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.0</version>
+            <configuration>
+              <source>11</source>
+              <target>11</target>
+              <release>11</release>
+            </configuration>
+	  </plugin>
+	  
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+              <descriptorRefs>
+                <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+	      
+              <archive>
+                <manifest>
+                  <mainClass>org.jlab.groot.demo.GROOTDemo</mainClass>
+                </manifest>
+              </archive>
+	      
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                <phase>package</phase> <!-- bind to the packaging phase -->
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>	
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>ssh-clasweb</id>
+            <url>scpexe://clas12@jlabl1.jlab.org/group/clas/www/clasweb/html/clas12maven</url>
+        </repository>
+    </distributionManagement>
+<!--
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+-->
+
+</project>

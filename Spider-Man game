@@ -1,0 +1,119 @@
+import java.awt.Graphics;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+public class SpiderManGame extends javax.swing.JFrame implements KeyListener {
+
+    private SpiderMan spiderman;
+
+    public SpiderManGame() {
+        initComponents();
+
+        spiderman = new SpiderMan(200, 200);
+
+        addKeyListener(this);
+    }
+
+    private void initComponents() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(400, 400);
+        setTitle("Spider-Man Game");
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+
+        spiderman.draw(g);
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        int keyCode = e.getKeyCode();
+
+        switch (keyCode) {
+            case KeyEvent.VK_LEFT:
+                spiderman.moveLeft();
+                break;
+            case KeyEvent.VK_RIGHT:
+                spiderman.moveRight();
+                break;
+            case KeyEvent.VK_UP:
+                spiderman.jump();
+                break;
+            case KeyEvent.VK_SPACE:
+                spiderman.shootWeb();
+                break;
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        int keyCode = e.getKeyCode();
+
+        switch (keyCode) {
+            case KeyEvent.VK_LEFT:
+                spiderman.stopMovingLeft();
+                break;
+            case KeyEvent.VK_RIGHT:
+                spiderman.stopMovingRight();
+                break;
+            case KeyEvent.VK_SPACE:
+                spiderman.stopShootingWeb();
+                break;
+        }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    public static void main(String[] args) {
+        new SpiderManGame().setVisible(true);
+    }
+}
+
+class SpiderMan {
+
+    private int x;
+    private int y;
+    private int speed;
+
+    public SpiderMan(int x, int y) {
+        this.x = x;
+        this.y = y;
+        speed = 5;
+    }
+
+    public void draw(Graphics g) {
+        g.fillRect(x, y, 10, 10);
+    }
+
+    public void moveLeft() {
+        x -= speed;
+    }
+
+    public void moveRight() {
+        x += speed;
+    }
+
+    public void jump() {
+        y -= speed;
+    }
+
+    public void shootWeb() {
+        // TODO: Implement web shooting
+    }
+
+    public void stopMovingLeft() {
+        // TODO: Implement stop moving left
+    }
+
+    public void stopMovingRight() {
+        // TODO: Implement stop moving right
+    }
+
+    public void stopShootingWeb() {
+        // TODO: Implement stop shooting web
+    }
+}

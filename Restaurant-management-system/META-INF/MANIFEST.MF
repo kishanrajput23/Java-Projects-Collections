@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: 1.7.0_45 (Oracle Corporation)
+Main-Class: RMS_GUI
+

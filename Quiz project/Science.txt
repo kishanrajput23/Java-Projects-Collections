@@ -1,0 +1,60 @@
+Give the SI unit of resistivity.
+a) ohm/metre2  b) ohm metre2  c) ohm metre  d) ohm/metre
+The equation → ∑e = ∑IR is applicable to which law?
+a) Kirchhoff’s second law  b) Kirchhoff’s junction rule  c) Kirchhoff’s third law  d) Newton’s Law
+Which among the following is not attracted by magnets?
+a) Iron  b) Cobalt  c) Copper  d) Nickel
+Holes are charge carriers in which one of the following?
+a) Intrinsic semiconductors  b) Ionic solids  c) n-type semiconductors  d) Metals
+At absolute zero, Si acts as which of the following?
+a) Non-metal  b) Metal  c) Insulator  d) Capacitor
+What is the semiconductor diode used as?
+a) Oscillator  b) Amplifier  c) Rectifier  d) Modulator
+What is a Zener diode used as?
+a) Oscillator  b) Regulator  c) Rectifier  d) Filter
+What is a transistor made up of?
+a) Chip  b) Insulator  c) Semiconductor  d) Metal
+What are sunglasses made of?
+a) Colored glasses  b) Tin glass  c) Silica  d) Polaroids
+Which of the following causes dispersion?
+a) Refraction  b) Reflection  c) Total internal reflection  d) Total internal dispersion
+What will be the color of the sky in the absence of the atmosphere?
+a) White  b) Dark  c) Blue  d) Pink
+Which among the following is denoted by δ?
+a) Horizontal component  b) Magnetic meridian  c) Magnetic declination  d) Magnetic inclination
+At the magnetic North Pole of the Earth, what is the value of the angle of dip?
+a) Zero  b) Minimum  c) Infinity  d) Maximum
+What is the net magnetic flux through a closed surface?
+a) Positive  b) Negative  c) Zero  d) Depends on the nature of the surface
+Which among the following is the source of the magnetic field (magnetism)?
+a) Mechanical origin  b) Electrical origin  c) Chemical origin  d) Potential origin
+Diamond is an example of _______
+a) solid with hydrogen bonding  b) electrovalent solid  c) covalent solid  d) glass
+Which of the following is not a crystal system?
+a) Cubic  b) Trigonal  c) Triclinic  d) Hexaclinic
+Which type of solid crystals will conduct heat and electricity?
+a) Ionic  b) Covalent  c) Molecular  d) Metallic
+Quartz is an example of ___________
+a) molecular solids  b) ionic solids  c) covalent solids  d) metallic solids
+Which of the following is a true solution?
+a) Salt solution  b) Ink  c) Blood  d) Starch solution
+What is pumice stone an example of?
+a) Solid aerosol  b) Emulsion  c) Liquid aerosol  d) Solid foam
+Which of the following forces is involved in physical adsorption?
+a) Gravitational force  b) Magnetic force  c) Van der Waals force  d) Electromagnetic force
+Which of the following is present at the time of cracking of hydrocarbons?
+a) Copper  b) Zeolite  c) Nickel  d) Molybdenum
+How does a catalyst change during a reaction?
+a) Physically  b) Mass-wise  c) Chemically  d) Quantitatively
+Identify the compound which does not act as a target for drug action in the human body?
+a) RNA  b) DNA  c) Vitamin C  d) Protein
+Alitame is ______ times sweeter than cane sugar.
+a) 50  b) 100  c) 600  d) 2000
+Dishwashing liquids are examples of ______
+a) soaps  b) anionic detergents  c) cationic detergents  d) non-ionic detergents
+Amines are derivatives of ______
+a) NCl3  b) NH3  c) N2  d) CH3NH2
+How many lone pairs of electrons does the nitrogen atom of amines have?
+a) 0  b) 1  c) 2  d) 3
+Which of the following is the least reactive functional group?
+a) Alcohols  b) Ethers  c) Aldehydes  d) Ketones

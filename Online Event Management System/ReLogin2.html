@@ -1,0 +1,64 @@
+<html>
+<head>
+<title> A L</title>
+<script language="javascript">
+
+function first(){
+	document.f1.uid.focus();
+}
+
+function valid()
+{
+  if(document.f1.uid.value=="")
+  {
+    alert("Please enter login id");
+    document.f1.uid.focus();
+    return false;
+   }
+   if(document.f1.pwd.value==""){
+    alert("Please enter your password");
+    document.f1.pwd.focus();
+    return false;
+  }
+}
+</script>
+</head>
+<body bgcolor=#11112 onLoad=first()>
+<table border=0 width=100% bgcolor=#7777>
+<tr><td align=center><font size=+4 color=white> A L SURGICALS </td><tr>
+<tr><td align=center><font size=+1 color=white>D.No 18-77, 1st Floor Street No:3 Kamalanagar, Chaitanyapuri </td><tr>
+<tr><td align=center><font size=+1 color=white> Beside Lane of Indian bank,Dislsuknagar,Hyderbad-60 </td><tr>
+</table>
+
+<br><br>
+<form name="f1" onsubmit="return valid()" action="UserLogin.jsp">
+<table border=0 align=center bgcolor=white width=270 height=170>
+<caption> <font size=+2 color=white> Invalid User Re- Login</font></caption>
+<tr bgcolor=black>
+<td colspan=2 align=center><font size=+3 color=white>User Login</td>
+</tr>
+<tr>
+<td><h3>Userid &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type=text name="uid"></h2></td>
+</tr>
+
+<tr>
+<td><h3>Password &nbsp; &nbsp;<input type=password name="pwd"></h2></td>
+</tr>
+
+<tr bgcolor=black>
+<td align=center><input type=submit value=Login><input type=Reset value=Reset></td>
+</tr>
+</table>
+</form>
+
+
+
+
+<table border=0 width=100% bgcolor=#7777>
+<tr><td align=center><font size=+1 color=white>Contact No:924102023 &nbsp; &nbsp; &nbsp;Ph:040-234567 &nbsp; &nbsp; &nbsp;Email:badrinathsamudrala@gmail.com </td><tr>
+</table>
+
+
+
+</body>
+</html>

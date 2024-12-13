@@ -1,0 +1,13 @@
+101,Pizza,7.0,1
+102,Mushroom pasta,5.95,1
+103,Meatball pasta,6.5,1
+104,Cheese Ravioli,5.95,1
+200,Milk,3.5,2
+201,Coke,3.5,2
+202,Sprite,3.5,2
+203,Tea,4.0,2
+302,Glass wine red,7.0,3
+303,Bottle wine white,30.0,3
+304,Bottle wine red,30.0,3
+401,Tiramisu,6.0,4
+402,Ice cream,5.0,4

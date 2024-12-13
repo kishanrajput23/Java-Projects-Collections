@@ -1,0 +1,16 @@
+Battle Log				Result					Points
+---------------------------------------------------------------------------------------------------
+IRON MAN v/s THANOS			IRON MAN Killed THANOS			Points Scored : 960
+IRON MAN v/s LOKI			IRON MAN Killed LOKI			Points Scored : 480
+CAPTAIN AMERICA v/s LOKI			CAPTAIN AMERICA Killed LOKI			Points Scored : 480
+CAPTAIN AMERICA v/s LOKI			CAPTAIN AMERICA Killed LOKI			Points Scored : 480
+IRON MAN v/s THANOS			IRON MAN Killed THANOS			Points Scored : 960
+HULK v/s LOKI			HULK Killed LOKI			Points Scored : 480
+IRON MAN v/s THANOS			IRON MAN and THANOS Killed Each Other			Points Scored  : 960
+IRON MAN v/s THANOS			IRON MAN and THANOS Killed Each Other			Points Scored  : 960
+IRON MAN v/s THANOS			IRON MAN Killed THANOS			Points Scored : 960
+IRON MAN v/s THANOS			IRON MAN Killed THANOS			Points Scored : 960
+IRON MAN v/s THANOS			IRON MAN Killed THANOS			Points Scored : 960
+IRON MAN v/s THANOS			IRON MAN Killed THANOS			Points Scored : 960
+IRON MAN v/s THANOS			IRON MAN Killed THANOS			Points Scored : 960
+IRON MAN v/s LOKI			IRON MAN Killed LOKI			Points Scored : 480

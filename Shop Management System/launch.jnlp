@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jnlp codebase="$$codebase" href="launch.jnlp" spec="1.0+">
+    <information>
+        <title>Billing software</title>
+        <vendor>Sushil Ranjan</vendor>
+        <homepage href=""/>
+        <description>This is a Shop related software</description>
+        <description kind="short">Billing software</description>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="1.7+"/>
+        <jar href="Billing_software.jar" main="true"/>
+    <jar href="lib/mysql-connector-java-5.1.23-bin.jar"/>
+<jar href="lib/AbsoluteLayout.jar"/>
+<jar href="lib/beansbinding-1.2.1.jar"/>
+</resources>
+    <application-desc main-class="billing.software.Login">
+    </application-desc>
+</jnlp>

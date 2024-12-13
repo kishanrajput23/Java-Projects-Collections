@@ -1,0 +1,96 @@
+import java.util.Scanner;
+
+public class MazeGame {
+
+    private static final int WALL = '#';
+    private static final int PLAYER = 'P';
+    private static final int EXIT = 'X';
+
+    private static char[][] maze;
+    private static int playerRow;
+    private static int playerCol;
+
+    public static void main(String[] args) {
+        // Load the maze
+        maze = new char[][]{{'#', '#', '#', '#', '#'},
+                            {'#', ' ', ' ', ' ', '#'},
+                            {'#', ' ', '#', '#', '#'},
+                            {'#', ' ', ' ', ' ', '#'},
+                            {'#', '#', '#', '#', '#'}};
+
+        // Initialize the player position
+        playerRow = 1;
+        playerCol = 1;
+
+        // Play the game
+        while (true) {
+            // Print the maze
+            printMaze();
+
+            // Get the player's move
+            Scanner scanner = new Scanner(System.in);
+            char move = scanner.next().charAt(0);
+
+            // Move the player
+            switch (move) {
+                case 'w':
+                    moveUp();
+                    break;
+                case 'a':
+                    moveLeft();
+                    break;
+                case 's':
+                    moveDown();
+                    break;
+                case 'd':
+                    moveRight();
+                    break;
+            }
+
+            // Check if the player has won
+            if (maze[playerRow][playerCol] == EXIT) {
+                System.out.println("You won!");
+                break;
+            }
+
+            // Check if the player has hit a wall
+            if (maze[playerRow][playerCol] == WALL) {
+                System.out.println("You hit a wall!");
+                break;
+            }
+        }
+    }
+
+    private static void printMaze() {
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze[0].length; j++) {
+                System.out.print(maze[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    private static void moveUp() {
+        if (playerRow > 0) {
+            playerRow--;
+        }
+    }
+
+    private static void moveLeft() {
+        if (playerCol > 0) {
+            playerCol--;
+        }
+    }
+
+    private static void moveDown() {
+        if (playerRow < maze.length - 1) {
+            playerRow++;
+        }
+    }
+
+    private static void moveRight() {
+        if (playerCol < maze[0].length - 1) {
+            playerCol++;
+        }
+    }
+}

@@ -1,0 +1,74 @@
+<project name="complaint" default="all" basedir=".">
+
+  <!-- set global properties for this build -->
+  <property environment="env"/>
+  <property file="examples.properties"/>
+  <property name="build.compiler" value="${JAVAC}"/>
+  <property name="source" value="."/>
+  <property name="build" value="${source}/build"/>
+  <property name="dist" value="${source}/dist"/>
+
+  <target name="all" depends="clean, init, compile_ejb, jar_ejb, ejbc, ear_app,compile_client"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile
+    and copy the deployment descriptors into it-->
+    <mkdir dir="${build}"/>
+    <mkdir dir="${build}/META-INF"/>
+    <mkdir dir="${dist}"/>
+    <copy todir="${build}/META-INF">
+      <fileset dir="${source}">
+        <include name="ejb-jar.xml"/>
+        <include name="weblogic-ejb-jar.xml"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <!-- Compile ejb classes into the build directory (jar preparation) -->
+  <target name="compile_ejb">
+    <javac srcdir="${source}" destdir="${build}"
+       includes="Item.java,Order.java, OrderHome.java, OrderBean.java"/>
+  </target>
+
+  <!-- Update ejb jar file or create it if it doesn't exist; including XML 
+    deployment descriptors -->
+  <target name="jar_ejb" depends="compile_ejb">
+    <jar jarfile="${dist}/order.jar"
+      basedir="${build}"
+      update="yes">
+    </jar>
+  </target>
+
+  <!-- Run ejbc to create the deployable jar file -->
+  <target name="ejbc" depends="jar_ejb">
+    <java classname="weblogic.ejbc" fork="yes" failonerror="yes">
+      <sysproperty key="weblogic.home" value="${WL_HOME}/server"/>
+      <arg line="-verbose -compiler javac ${dist}/order.jar"/>
+      <classpath>
+        <pathelement path="${CLASSPATH}"/>
+      </classpath>
+    </java>
+  </target>
+
+  <!-- Put the ejb into an ear, to be deployed from the ${APPLICATIONS} dir -->
+  <target name="ear_app" depends="jar_ejb">
+    <ear earfile="${APPLICATIONS}/order.ear" appxml="${source}/application.xml">
+      <fileset dir="${dist}" includes="order.jar"/>
+    </ear>
+  </target>
+
+
+
+    <!-- Compile client app into the clientclasses directory, and move the client jar file (created by ejbc) there as well -->
+  <target name="compile_client">
+    <move file="order_client.jar" tofile="${CLIENT_CLASSES}/order_client.jar"/>
+   
+  </target>
+
+  <target name="clean">
+    <delete dir="${build}"/>
+  </target>
+
+</project>

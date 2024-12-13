@@ -1,0 +1,40 @@
+.box{
+    height: 200px;
+    width: auto;
+    border: 2px solid black;
+
+    display:flex;
+    justify-content:center ;
+    align-items: center; 
+    
+    border-radius: 10px;
+
+    background-color:wheat;
+    font-family: 'Comic Neue', cursive;
+font-family: 'Roboto', sans-serif;
+
+font-size: larger;
+
+/* color: aliceblue; */
+}
+
+.br{
+    position:absolute;
+top: 30%;
+left:40%
+}
+
+#btn{
+    background-color: #011801; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+
+  border-radius: 10px;
+}
+
+

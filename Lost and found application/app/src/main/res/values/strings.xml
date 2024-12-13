@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name">BU FINDER</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <array name="Dev_Type">
+        <item>Audio Devices</item>
+        <item>Laptop and Accessories</item>
+        <item>Wearables</item>
+        <item>Footwear</item>
+        <item>Bottle</item>
+        <item>Keys</item>
+        <item>Sports Equipment</item>
+        <item>Any type of Card</item>
+    </array>
+
+    <array name="Aud_Dev">
+        <item>Speakers</item>
+        <item>Over-ear Headphones</item>
+        <item>On-ear Headphones</item>
+        <item>Collar Earphones</item>
+        <item>Wired Earphones</item>
+        <item>True Wireless Earphones</item>
+        <item>Other</item>
+    </array>
+
+    <array name="Wearables">
+        <item>Spectacles</item>
+        <item>Watches</item>
+        <item>Jewellery</item>
+        <item>Caps</item>
+        <item>Mufflers</item>
+        <item>Gloves</item>
+        <item>Other</item>
+    </array>
+    <array name="Lap_Acc">
+        <item>Laptop</item>
+        <item>Keyboard</item>
+        <item>Mouse</item>
+        <item>Storage Devices</item>
+        <item>Charger</item>
+        <item>Laptop Sleeve</item>
+        <item>Other</item>
+    </array>
+    <array name="Footwear">
+        <item>Shoes</item>
+        <item>Slippers</item>
+        <item>Sandals</item>
+        <item>Other</item>
+    </array>
+    <array name="Bottles">
+        <item>Steel Bottles</item>
+        <item>Gym Bottles</item>
+        <item>Other</item>
+    </array>
+
+    <array name="Keys">
+        <item>Car Keys</item>
+        <item>Room Keys</item>
+        <item>Locker Keys</item>
+        <item>Other</item>
+    </array>
+    <array name="Spo_Equ">
+        <item>Racquets</item>
+        <item>Ball</item>
+        <item>Shuttle Cock</item>
+        <item>Other</item>
+    </array>
+    <array name="Cards">
+        <item>Credit/Debit Cards</item>
+        <item>ID Card</item>
+        <item>Other</item>
+    </array>
+    <array name="ADbrands">
+        <item>Bose</item>
+        <item>Apple</item>
+        <item>Boat</item>
+        <item>Noise</item>
+        <item>MI</item>
+        <item>Realme</item>
+        <item>Other</item>
+    </array>
+    <array name="LAbrands">
+        <item>HP</item>
+        <item>Dell</item>
+        <item>Apple</item>
+        <item>Lenovo</item>
+        <item>Other</item>
+    </array>
+    <array name="Wbrands">
+        <item>Casio</item>
+        <item>MI</item>
+        <item>Apple</item>
+        <item>Titan</item>
+        <item>Rado</item>
+        <item>G-Shock</item>
+        <item>Other</item>
+    </array>
+    <array name="Fbrands">
+        <item>Nike</item>
+        <item>Adidas</item>
+        <item>Reebok</item>
+        <item>Sparx</item>
+        <item>Campus</item>
+        <item>Crocs</item>
+        <item>Decathlon</item>
+        <item>Other</item>
+    </array>
+    <array name="SEbrands">
+        <item>Yonex</item>
+        <item>Adidas</item>
+        <item>Nike</item>
+        <item>Puma</item>
+        <item>Decathlon</item>
+        <item>Cosco</item>
+        <item>Other</item>
+    </array>
+    <array name="Bbrands">
+        <item>Other</item>
+    </array>
+    <array name="Kbrands">
+        <item>Other</item>
+    </array>
+    <array name="Cbrands">
+        <item>HDFC</item>
+        <item>UCO Bank</item>
+        <item>Slice</item>
+        <item>Bennett ID</item>
+        <item>Aadhaar Card</item>
+        <item>Other</item>
+    </array>
+    <array name="Colours">
+        <item>Red</item>
+        <item>Orange</item>
+        <item>Pink</item>
+        <item>Grey</item>
+        <item>Black</item>
+        <item>White</item>
+        <item>Dark Green</item>
+        <item>Light Green</item>
+        <item>Yellow</item>
+        <item>Light Blue</item>
+        <item>Dark Blue</item>
+        <item>Violet</item>
+    </array>
+
+</resources>

@@ -1,0 +1,60 @@
+Which Set class should be most popular in a multi-threading environment, considering performance constraint?
+a.)HashSet  b.)ConcurrentSkipListSet  c.)LinkedHashSet  d.)CopyOnWriteArraySet
+Which Map class should be most popular in a multi-threading environment, considering performance constraint?
+a.)Hashtable  b.)CopyOnWriteMap  c.)ConcurrentHashMap  d.)ConcurrentMap
+Which allows the removal of elements from a collection?
+a.)Enumeration  b.)Iterator  c.)Both  d.)None of the above
+In a stack, if a user tries to remove an element from an empty stack it is called _________
+a) Underflow  b) Empty collection  c) Overflow  d) Garbage Collection
+The self organizing list improves the efficiency of _______
+a) binary search  b) jump search  c) sublist search  d) linear search
+Symbol tables during compilation of program is efficiently implemented using __________
+a) a singly linked list  b) a doubly linked list  c) a self organizing list  d) an array
+The self organizing list improves _____
+a) average access time  b) insertion  c) deletion  d) binary search
+Which of these cannot be used for a variable name in Java?
+a) identifier & keyword  b) identifier  c) keyword d) none of the mentioned
+Which of the following is not a segment of memory in java?
+a) Code Segment  b) Register Segment  c) Stack Segment  d) Heap Segment
+Which exception is thrown when java is out of memory?
+a) MemoryError  b) OutOfMemoryError  c) MemoryOutOfBoundsException  d) MemoryFullException
+Which of these class is a superclass of every class in Java?
+a) ArrayList class  b) Abstract class  c) Object class  d) String class
+Which of these keywords can be used to prevent Method overriding in Java?
+a) final  b) protected  c) static  d) constant
+Which of these packages contains the exception Stack Overflow in Java?
+a) java.io  b) java.system  c) java.lang   d) java.util
+Which one of the following is not an access modifier?
+a) Protected  b) Void  c) Public  d) Private
+Which of this method of class String is used to obtain a length of String object?
+a) get()  b) Sizeof()  c) lengthof()  d) length()
+Which of these constructors is used to create an empty String object?
+a) String()  b) String(void)  c) String(0)  d) None of the mentioned
+Which of these is a method to clear all the data present in output buffers?
+a) clear()  b) flush()  c) fflush()  d) close()
+Which of these is a super class of Character wrapper?
+a) Long  b) Digits  c) Float  d) Number
+Which concept of Java is a way of converting real world objects in terms of class?
+a) Polymorphism  b) Encapsulation  c) Abstraction  d) Inheritance
+Which of this method is used to find out that a thread is still running or not?
+a) run()  b) Alive()  c) isAlive()  d) checkRun()
+Which of these method is used to implement Runnable interface?
+a) stop()  b) run()  c) runThread()  d) stopThread()
+Which of the following allows us to call generic methods as a normal method?
+a) Type Interface  b) Interface  c) Inner class  d) All of the mentioned
+Which of these is not a bitwise operator?
+a) &  b) &=  c) |=  d) <=
+Which of these keywords is used to define interfaces in Java?
+a) intf  b) Intf  c) interface  d) Interface
+Which of these access specifiers must be used for main() method?
+a) private  b) public  c) protected  d) none of the mentioned
+What is the process by which we can control what parts of a program can access the members of a class?
+a) Polymorphism  b) Abstraction  c) Encapsulation  d) Recursion
+Which of these access specifier must be used for class so that it can be inherited by another subclass?
+a) public  b) private  c) protected  d) none of the mentioned
+Which of this keyword must be used to inherit a class?
+a) super  b) this  c) extent  d) extends
+What is not type of inheritance?
+a) Single inheritance  b) Double inheritance  c) Hierarchical inheritance  d) Multiple inheritance
+If super class and subclass have same variable name, which keyword should be used to use super class?
+a) super  b) this  c) upper  d) classname

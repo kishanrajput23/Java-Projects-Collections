@@ -1,0 +1,34 @@
+import com.google.cloud.speech.v1.RecognitionAudio;
+import com.google.cloud.speech.v1.RecognitionConfig;
+import com.google.cloud.speech.v1.RecognitionResults;
+import com.google.cloud.speech.v1.SpeechClient;
+
+public class SpeechRecognizer {
+
+    public static String recognizeSpeech() throws Exception {
+        // Create a SpeechClient object.
+        SpeechClient speechClient = SpeechClient.create();
+
+        // Create a RecognitionConfig object.
+        RecognitionConfig recognitionConfig = RecognitionConfig.newBuilder()
+                .setEncoding(RecognitionConfig.AudioEncoding.LINEAR16)
+                .setLanguageCode("en-US")
+                .build();
+
+        // Create a RecognitionAudio object.
+        RecognitionAudio recognitionAudio = RecognitionAudio.newBuilder()
+                .setContent(audioData)
+                .build();
+
+        // Perform speech recognition.
+        RecognitionResults results = speechClient.recognize(recognitionConfig, recognitionAudio);
+
+        // Get the recognized text.
+        String recognizedText = results.getResultsList().get(0).getAlternativesList().get(0).getTranscript();
+
+        // Close the SpeechClient.
+        speechClient.close();
+
+        return recognizedText;
+    }
+}

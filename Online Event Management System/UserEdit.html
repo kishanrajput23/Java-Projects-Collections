@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<title> Faculty Edit Page</title>
+
+<script language="javascript">
+function first(){
+	document.f1.facultyno.focus();
+}
+function check(){
+	if(document.f1.facultyno.value.length==0){
+		alert("please enter faculty no");
+		document.f1.htno.focus();
+		return false;
+	}
+}
+</script>
+</HEAD>
+
+<BODY onload="javascript:first()">
+
+
+<table height="10%" width="100%" border=1 bordercolor="yellow" bgcolor=#7777>
+<tr><td align="center"><font size=+3 color=white>User Edit </td>
+
+</tr>
+
+</table>
+
+
+<form name="f1" action="UserEdit.jsp">
+<br>
+<br>
+<Center>
+<table height="30%" width="30%" border=1 bgcolor=lightyellow bordercolor=red cellpadding=10% cellspacing=10%>
+
+<tr><td>
+<table>
+<tr><td><h1>Enter User ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type=text name="userid"></td></tr>
+<tr> <td> &nbsp;</td><tr>
+<tr><td align=center bgcolor=yellow><input type=submit value="submit">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type=Reset value="Reset">
+</td>
+</tr>
+
+</table>
+</td></tr>
+</table
+</form>
+
+
+
+
+</BODY>
+</HTML>

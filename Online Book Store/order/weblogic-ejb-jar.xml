@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE weblogic-ejb-jar PUBLIC 
+'-//BEA Systems, Inc.//DTD WebLogic 7.0.0 EJB//EN' 
+'http://www.bea.com/servers/wls700/dtd/weblogic-ejb-jar.dtd'>
+
+<weblogic-ejb-jar>
+  <weblogic-enterprise-bean>
+    <ejb-name>Order</ejb-name>
+    <jndi-name>obs.order</jndi-name>
+  </weblogic-enterprise-bean>
+</weblogic-ejb-jar>
+
