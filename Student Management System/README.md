@@ -50,7 +50,7 @@ The **Student Management System** is a Java-based console application designed t
 
 ## UML Diagram
 
-For a detailed UML class diagram of the project, refer to [UML_Diagram.md](https://github.com/Mohammed-3tef/Student_Management_System/blob/main/UML%20Diagram.md).
+For a detailed UML class diagram of the project, refer to [UML_Diagram.md](https://github.com/Mohammed-3tef/Java-Projects-Collections/blob/main/Student%20Management%20System/UML%20Diagram.md).
 
 ---
 
