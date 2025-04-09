@@ -1,10 +1,11 @@
 //Digital Clock mini project
 
+
+
+import javax.swing.*;
 import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 public class Clock extends JFrame {
 
@@ -19,43 +20,33 @@ public class Clock extends JFrame {
     String time;
     String day;
     String date;
-
     Clock() {
-
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Digital Clock");
         this.setLayout(new FlowLayout());
-
+        this.setSize(350, 220);
         this.setResizable(false);
 
         timeFormat = new SimpleDateFormat("hh:mm:ss a");
-        dayFormat = new SimpleDateFormat("EEEE");
-        dateFormat = new SimpleDateFormat("dd MMMMM, yyyy");
+        dayFormat=new SimpleDateFormat("EEEE");
+        dateFormat=new SimpleDateFormat("dd MMMMM, yyyy");
         timeLabel = new JLabel();
         timeLabel.setFont(new Font("SANS_SERIF", Font.PLAIN, 59));
         timeLabel.setBackground(Color.BLACK);
         timeLabel.setForeground(Color.WHITE);
         timeLabel.setOpaque(true);
-        dayLabel = new JLabel();
-        dayLabel.setFont(new Font("Ink Free", Font.BOLD, 34));
+        dayLabel=new JLabel();
+        dayLabel.setFont(new Font("Ink Free",Font.BOLD,34));
 
-        dateLabel = new JLabel();
-        dateLabel.setFont(new Font("Ink Free", Font.BOLD, 30));
+        dateLabel=new JLabel();
+        dateLabel.setFont(new Font("Ink Free",Font.BOLD,30));
 
-        //Creating JPanel to add all the content.
-        // Used Box layout to align components on Y-axis.
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        mainPanel.setPreferredSize(new Dimension(400, 170));
 
-        mainPanel.add(timeLabel);
-        mainPanel.add(dayLabel);
-        mainPanel.add(dateLabel);
-
-        this.add(mainPanel);
+        this.add(timeLabel);
+        this.add(dayLabel);
+        this.add(dateLabel);
         this.setVisible(true);
-        this.pack();
+
         setTimer();
     }
 
@@ -77,7 +68,6 @@ public class Clock extends JFrame {
             }
         }
     }
-
     public static void main(String[] args) {
         new Clock();
     }
