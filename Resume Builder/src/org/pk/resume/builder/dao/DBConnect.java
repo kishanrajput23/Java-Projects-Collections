@@ -256,25 +256,21 @@ public class DBConnect {
 	}
 
 	public boolean insertAchievement(Achievements achievement) {
-		String SQL = "insert into achievement(name, title, place, ach_date)"
-				+ " values ('"
-				+ achievement.getName()
-				+ "','"
-				+ achievement.getTitle()
-				+ "','"
-				+ achievement.getPlace()
-				+ "','" +
-				achievement.getDate()
-				+ "')";
-		System.out.println("SQL >> " + SQL);
 		boolean result = false;
 		connection = getConnection();
 		try {
 			if (connection != null) {
-				Statement st = connection.createStatement();
-				int update = st.executeUpdate(SQL);
-				if (update > 0) {
-					result = Boolean.TRUE;
+				String SQL = "INSERT INTO achievement(name, title, place, ach_date) VALUES (?, ?, ?, ?)";
+				try (PreparedStatement pstmt = connection.prepareStatement(SQL)) {
+					pstmt.setString(1, achievement.getName());
+					pstmt.setString(2, achievement.getTitle());
+					pstmt.setString(3, achievement.getPlace());
+					pstmt.setString(4, achievement.getDate());
+					System.out.println("Executing SQL >> " + pstmt);
+					int update = pstmt.executeUpdate();
+					if (update > 0) {
+						result = Boolean.TRUE;
+					}
 				}
 				closeConnection();
 			} else {
