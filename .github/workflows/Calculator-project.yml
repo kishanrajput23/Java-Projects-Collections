@@ -1,0 +1,28 @@
+name: Build Calculator
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '*Java-Projects-Collections/tree/main/Calculator-project'  # Only run when files in project-a change
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'  # Use 'temurin', 'zulu', or another as needed
+          java-version: '17'       # Set to your Java version (e.g., 11, 17)
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Run tests
+        run: mvn test
