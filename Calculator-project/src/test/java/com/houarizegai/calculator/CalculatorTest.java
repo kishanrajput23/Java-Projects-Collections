@@ -34,3 +34,8 @@ class CalculatorTest {
 
     }
 }
+
+
+  /*
+     * testCalc() test method
+     */

@@ -7,5 +7,7 @@ public class Sub implements Operate{
             sub -= numbers[i];
         }
         return sub;
+#1234567890
+
     }
 }
