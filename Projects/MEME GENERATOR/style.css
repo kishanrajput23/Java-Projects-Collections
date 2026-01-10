@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  .main_body{
+   background-color: rgb(90, 92, 207);
+  }
+  #myImg {
+    height: 400px;
+    width: 500px;
+  }
+  .center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #FFFF00;
+    padding: 10px;
+  }
+  .div_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .btn{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }

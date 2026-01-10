@@ -1,0 +1,43 @@
+#header-wrapper{
+    text-align: center;
+    height: 40px;
+}
+#header-wrapper h2{
+    margin: 0;
+}
+#header-wrapper h4{
+    margin: 0;
+}
+
+#result-wrapper{
+    width: 50%;
+    height: calc(100% - 50px);
+    margin-top: 10px;
+    
+    float: left;
+}
+#setting-wrapper{
+    width: 50%;
+    height: calc(100% - 50px);
+    margin-top: 10px;
+    
+    float: left;
+}
+
+#stock-selection{
+    height: 50px;
+    width: 100%;
+}
+#stats-wrapper{
+    height: 145px;
+    width: 100%;
+}
+#main-code{
+    height: calc(100% - 50px - 145px);
+    width: 100%;
+}
+
+.info-before{
+    display: inline-block;
+    width: 175px;
+}

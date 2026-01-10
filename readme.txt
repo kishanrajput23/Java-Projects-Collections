@@ -1,2 +1,0 @@
-Username: admin
-Password: admin

@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/ace-builds@1.4.8/src-min-noconflict/ace.js"></script>
+        
+        <script src="showChart.js"></script>
+        <script src="getStockData.js"></script>
+        <script src="main.js"></script>
+        <link rel='stylesheet' type='text/css' href='main.css'>
+        <title>Stock Algorithm JS Sandbox</title>
+    </head>
+    <body style="margin: 0;">
+        <div id="header-wrapper">
+            <h2>Stock Algorithm JS Sandbox</h2>
+        </div>
+        <div id='result-wrapper'>
+            <canvas id="chart"></canvas>
+        </div>
+        <div id='setting-wrapper'>
+            <div id='stock-selection'>
+                <input id='stock-symbol-input' type='text' placeholder='Stock symbol'><br>
+                <input id='limit-input' type='text' placeholder='Data limit (leave blank for all)'>
+                <button onclick='getDataClick(document.getElementById("stock-symbol-input").value, document.getElementById("limit-input").value)'>Get Data</button><br>
+            </div>
+        <div id='stats-wrapper'>
+            <span class='info-before'>Amount of money earned:</span> <span class='info-after'></span><br>
+            <span class='info-before'>Amount of buy decisions:</span> <span class='info-after'></span><br>
+            <span class='info-before'>Amount of sell decisions:</span> <span class='info-after'></span><br>
+            <span class='info-before'>Amount of cheating sells:</span> <span class='info-after'></span><br>
+            <span class='info-before'>Amount of stock left:</span> <span class='info-after'></span><br><br>
+            <button onclick='run()'>Run simulation</button><button onclick='if(window.confirm("Are you sure you want to clear everything?")){window.localStorage.removeItem("savedProgram");window.location.reload()}'>Clear saved program and reload</button>
+        </div>
+<div id='main-code'>/*
+This is the space that you need to program in javascript, to create your own stock algorithm.
+There should be a "main" function, so that parameters can be passed in.
+Also, the main function should return either true for buy, false for sell, and undefined (no return) for no action.
+Like so:
+this.main = function(previousData, amountOfStock){
+    // Code here
+    // Something magical happens
+    return true; // true for buy, false for sell, undefined for no action
+}
+The amount of previous data can also be set using:
+this.previousDataAmt = 10; // Default 10
+Note that previousData will always have a length of previousDataAmt, which means it will start at previousDataAmt from the beginning
+
+FINAL NOTE: A cheater would be like this.main=function(){return false} and get huge profits. Well... not happening here.
+If the program tries to sell, but doesn't have any stock to sell, it will do nothing.
+
+Good luck
+Simon Cheng
+*/
+this.previousDataAmt = 10;
+this.main = function(previousData, amountOfStock){
+    
+};</div>
+        </div>
+        <script>
+            if(window.localStorage.getItem('savedProgram')){
+                document.getElementById('main-code').innerHTML = window.localStorage.getItem('savedProgram');
+            }
+            window.editor = ace.edit("main-code");
+            window.editor.setTheme("ace/theme/dawn");
+            window.editor.session.setMode("ace/mode/javascript");
+            window.editor.session.on('change', function(){
+                window.localStorage.setItem('savedProgram', window.editor.session.getValue());
+            });
+        </script>
+    </body>
+</html>

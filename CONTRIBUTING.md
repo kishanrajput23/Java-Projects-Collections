@@ -1,20 +1,29 @@
-## Contributing Guidelines
 
- Thank you for considering to contribute to this project.
- 
- This document specifies the guidelines that you should follow when contributing to this project.
- 
- Please adhere to the guidelines in order for your PR's to get approved.
+# Contributing Guidelines
 
-### General Rules :
-These are general rules that you should  follow when contributing to an Open Source project :
+Thank you for considering contributing to the Java Projects Collections repository!
 
-- Be Nice, Be Respectful (BNBR)
-- Check if the issue you opened exists or not. If it exists do not reopen it.
-- While opening a new issue, make sure you describe the issue clearly.
-- Write proper commit messages and document your PR well.
-- Always add comments in your code and explain it at points, if possible add Doctest.
-- Always create a Pull Request from a new branch such as **feature**; do not create a PR from **main**.
-- Write clean code and follow proper coding conventions.
+## How to Contribute
 
-Thank you ❤
+- **Add new Java projects or code samples**: Place your project in a relevant folder. If it doesn't fit an existing category, use the `JavaCodes` folder.
+- **Improve documentation**: Update or add READMEs, comments, or code explanations.
+- **Refactor or organize code**: Help categorize, clean up, or modernize existing code.
+- **Report issues**: Clearly describe bugs, missing files, or suggestions for improvement.
+
+## General Rules
+
+- Be Nice, Be Respectful (BNBR).
+- Search for existing issues before opening a new one.
+- Use clear, descriptive commit messages and pull request titles.
+- Add comments to your code where helpful.
+- Create pull requests from a feature branch, not from `main`.
+- Follow Java coding conventions and keep code clean and readable.
+
+## Folder Structure
+
+- **Single Java files**: Place in the most appropriate folder by topic. If unsure, use `JavaCodes`.
+- **Multi-file projects**: Keep in their own folder with a README if possible.
+
+---
+
+Thank you for your contributions! ❤️
