@@ -4,16 +4,17 @@ public class TicTacToe {
     private static char[][] board = new char[3][3];
     private static char currentPlayer = 'X';
     private static boolean gameWon = false;
+    private static boolean drawCondition = false; // optimized
 
     public static void main(String[] args) {
         initializeBoard();
         printBoard();
 
-        while (!gameWon) {
+        while (!gameWon && !drawCondition) {
             makeMove();
             printBoard();
             checkForWin();
-            switchPlayer();
+            if (!gameWon) switchPlayer(); //condition applied to correct the winner 
         }
 
         if (gameWon) {
@@ -71,6 +72,7 @@ public class TicTacToe {
 
         // Check for a draw
         boolean isFull = true;
+
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
                 if (board[row][col] == ' ') {
@@ -78,9 +80,12 @@ public class TicTacToe {
                     break;
                 }
             }
+            if (!isFull)
+                break; // optimization
         }
-        if (isFull) {
-            gameWon = true;
+
+        if (isFull && !gameWon) {
+            drawCondition = true;
         }
     }
 
