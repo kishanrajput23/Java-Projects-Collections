@@ -8,21 +8,20 @@ public class Account {
     private double checkingBalance = 0;
     private double savingBalance = 0;
 
+    Account (int customerNumber, int pinNumber, double checkingBalance, double savingBalance) {
+        this.customerNumber = customerNumber;
+        this.pinNumber = pinNumber;
+        this.checkingBalance = checkingBalance;
+        this.savingBalance = savingBalance;
+
+    }
+
     Scanner input = new Scanner(System.in);
     DecimalFormat moneyFormat = new DecimalFormat("'$'###,##0.00");
-
-    public void setCustomerNumber(int customerNumber){
-        this.customerNumber = customerNumber;
-    }
 
     public int getCustomerNumber(){
         return customerNumber;
     }
-
-    public void setPinNumber(int pinNumber){
-        this.pinNumber = pinNumber;
-    }
-
     public int getPinNumber(){
         return pinNumber;
     }
