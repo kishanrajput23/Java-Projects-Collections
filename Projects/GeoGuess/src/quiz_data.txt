@@ -1,0 +1,8 @@
+India,New Delhi
+United States,Washington D.C.
+United Kingdom,London
+Japan,Tokyo
+France,Paris
+Australia,Canberra
+Canada,Ottawa
+Germany,Berlin
