@@ -1,0 +1,41 @@
+# Student Management System
+
+A simple Java console application to manage student records.
+
+## Features
+
+- Add Student
+- View Students
+- Store student ID, Name and Age
+- Menu-driven interface
+
+## Technologies Used
+
+- Java
+- ArrayList
+- OOP Concepts
+
+## How to Run
+
+```bash
+javac Main.java
+java Main
+
+Author
+
+Abhishek Singh
+
+
+---
+
+### Step 3: Test Locally
+
+Open terminal inside `StudentManagementSystem`
+
+```bash
+javac Main.java
+java Main
+===== Student Management System =====
+1. Add Student
+2. View Students
+3. Exit
