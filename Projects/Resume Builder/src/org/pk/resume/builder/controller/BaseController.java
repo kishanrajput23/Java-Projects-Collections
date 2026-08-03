@@ -57,13 +57,13 @@ public class BaseController extends HttpServlet {
 			
 			/*if(userServices.insertPersonalDetails(personal))
 			{				
-				GlobalConstants.MESSAGE = "Personal Details Inserted Sucesfully";
+				GlobalConstants.MESSAGE = "Personal Details Inserted Successfully";
 				if(userServices.insertEducationalDetails(education))
 				{
-					GlobalConstants.MESSAGE = "Educational Details Inserted Sucesfully";
+					GlobalConstants.MESSAGE = "Educational Details Inserted Successfully";
 					if(userServices.insertExperienceDetails(experience))
 					{
-						GlobalConstants.MESSAGE = "Experience Details Inseted Sucesfully";
+						GlobalConstants.MESSAGE = "Experience Details Inserted Successfully";
 						session.setAttribute(GlobalConstants.PERSONAL_DETAILS, null);
 						session.setAttribute(GlobalConstants.EDUCATIONAL_DETAILS, null);
 						session.setAttribute(GlobalConstants.EXPERIENCE_DETAILS, null);
