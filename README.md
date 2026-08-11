@@ -26,4 +26,3 @@ See the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines.
 ---
 
 **Explore, learn, and build with Java!**
-
