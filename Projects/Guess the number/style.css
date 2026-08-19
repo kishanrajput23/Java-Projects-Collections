@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'PT Serif', serif;
+}
+
+#new{
+    display: none;
+}
+
+.typewriter h4 {
+   
+   color: rgb(14, 108, 175);
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap;
+    border-right: .10em solid rgb(0, 106, 255);
+    /* The typwriter cursor */
+    /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+     /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(0, 106, 255) }
+  }
+
+  #quit{
+    display: none;
+    
+    
+  }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradecalculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="style.css";
+
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+          <div class="screen">
+            <div class="screen-body">
+              <div class="screen-body-item left">
+                <div class="grade-title">
+                  <div class="animated infinite pulse">
+                    MST <br> Grade <br> Calculator
+                  </div>
+                </div>
+              </div>
+              <div class="screen-body-item">
+                <div class="grade-form">
+                  <div class="grade-form-group">
+                    <input type="text" class="grade-form-control" placeholder="TOC" id="toc">
+                  </div>
+                  <div class="grade-form-group">
+                    <input  type="text"  class="grade-form-control"   placeholder="DBMS" id="dbms">
+                  </div>
+                   <div class="grade-form-group">
+                    <input  type="text"  class="grade-form-control"   placeholder="IWT" id="iwt">
+                  </div>
+                  <div class="grade-form-group">
+                    <input  type="text"  class="grade-form-control"   placeholder="CYBER" id="cyber" >
+                  </div>
+                  <div > 
+                    <input type="button" name="" value="showPercentage" class="grade-form-button" onclick="calcy()">
+                  </div>            
+                </div>
+            </div>
+      
+          </div>
+            <div class="grade-form-group showdata">
+                    <p id="showData" >  </p>
+           </div>
+        </div>
+      </div>
+      
+      <script src="script.js"></script>
+      
+</body>
+</html>

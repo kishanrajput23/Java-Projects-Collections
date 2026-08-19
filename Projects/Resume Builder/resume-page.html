@@ -1,0 +1,575 @@
+<html>
+
+<head>
+	<title>Resume generator</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/scroll.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/column_scroll.css">
+	<link rel="stylesheet" type="text/css" href="css/thin_scroll.css">
+	<link rel="stylesheet" type="text/css" href="css/theme.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+	<meta name="description" content="Online document editor like interface to create and save Resume">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+	<div class="row">
+
+
+		<div class="col-sm-3 no-print" id="left">
+
+			<div id="panel">
+
+				<div id="notice">
+					<h4>Free resume builder <br></h4>
+					<h4>Provided by  Tnb sem-4 student </h4>
+				</div>
+
+				<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#usageModal">VIEW INSTRUCTIONS</button>
+				<button class="btn btn-block btn-success" onclick="window.print()">PRINT AS PDF</button>
+
+				<hr>
+
+				<h3 class="text-center">Template settings</h3>
+				<button id="customTemplateBtn" class="btn btn-block btn-default" onclick="template('custom');">Use custom template</button>
+				<h5>
+					Minor
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="minor" id="minorShow">Show</div>
+						<div class="toggle-option selected" data-toggle="minor" id="minorHide">Hide</div>
+					</div>
+				</h5>
+				<h5>
+					Contact lines
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="contact" id="contact3">3</div>
+						<div class="toggle-option selected" data-toggle="contact" id="contact4">4</div>
+						<div class="toggle-option" data-toggle="contact" id="contact5">5</div>
+					</div>
+				</h5>
+				<h5>
+					Horizontal margin
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="margin" id="margin1">1</div>
+						<div class="toggle-option" data-toggle="margin" id="margin2">2</div>
+						<div class="toggle-option" data-toggle="margin" id="margin3">3</div>
+						<div class="toggle-option selected" data-toggle="margin" id="margin4">4</div>
+						<div class="toggle-option" data-toggle="margin" id="margin5">5</div>
+						<div class="toggle-option" data-toggle="margin" id="margin6">6</div>
+					</div>
+				</h5>
+				<h5>
+					Line spacing
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="line" id="line1">1</div>
+						<div class="toggle-option" data-toggle="line" id="line2">2</div>
+						<div class="toggle-option" data-toggle="line" id="line3">3</div>
+						<div class="toggle-option selected" data-toggle="line" id="line4">4</div>
+						<div class="toggle-option" data-toggle="line" id="line5">5</div>
+						<div class="toggle-option" data-toggle="line" id="line6">6</div>
+					</div>
+				</h5>
+				<h5>
+					Center column no.
+					<div class="toggle-button">
+						<div class="toggle-option multi-select" data-toggle="column" id="column1">1</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column2">2</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column3">3</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column4">4</div>
+					</div>
+				</h5>
+				
+				<br>
+				
+				<div id="customTemplateOptions">
+					<h5>
+						Font type
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="font" id="fontVerdanaSans">1</div>
+							<div class="toggle-option" data-toggle="font" id="fontVerdanaSerif">2</div>
+							<div class="toggle-option" data-toggle="font" id="fontRoboto">3</div>
+							<div class="toggle-option selected" data-toggle="font" id="fontDroid">4</div>
+						</div>
+					</h5>
+					<h5>
+						Title case
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="case" id="caseNormal">Default</div>
+							<div class="toggle-option" data-toggle="case" id="caseUpper">Uppercase</div>
+						</div>
+					</h5>
+					<h5>
+						Title style
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="title" id="titleRuled">Ruled</div>
+							<div class="toggle-option" data-toggle="title" id="titleShaded">Shaded</div>
+						</div>
+					</h5>
+					<h5>
+						Title rule position
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="rule" id="ruleAbove">Above title</div>
+							<div class="toggle-option" data-toggle="rule" id="ruleBelow">Below title</div>
+						</div>
+					</h5>
+					<br>
+					<h5>
+						Image
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="image" id="imageShow">Show</div>
+							<div class="toggle-option" data-toggle="image" id="imageHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Roll No
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="roll" id="rollShow">Show</div>
+							<div class="toggle-option" data-toggle="roll" id="rollHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Course
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="course" id="course1">1 line</div>
+							<div class="toggle-option" data-toggle="course" id="course2">2 lines</div>
+						</div>
+					</h5>
+					<h5>
+						Table border
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="table" id="tableShow">Show</div>
+							<div class="toggle-option" data-toggle="table" id="tableHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Education year column
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="edyear" id="edyearFirst">First</div>
+							<div class="toggle-option" data-toggle="edyear" id="edyearLat">Last</div>
+						</div>
+					</h5>
+					<h5>
+						Experience layout
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="experience" id="experience1">L1</div>
+							<div class="toggle-option" data-toggle="experience" id="experience2">L2</div>
+						</div>
+					</h5>
+					<h5>
+						Projects layout
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="projects" id="projects1">L1</div>
+							<div class="toggle-option" data-toggle="projects" id="projects2">L2</div>
+						</div>
+					</h5>
+					<br>
+				</div>
+
+				<h5>
+					<button class="btn btn-sm btn-block btn-primary" data-toggle="modal" data-target="#sectionToggleModal">Show/Hide sections</button>
+				</h5>
+
+				<hr>
+
+				
+				<h5>
+					<div id="notice1">
+						<h4>Free resume builder <br></h4>
+						<h4>Provided by  Tnb sem-4 student </h4>
+					</div>
+				</h5>
+
+			</div>
+
+		</div>
+
+
+		<div class="col-sm-9 text-center" id="right">
+
+			<div id="page" class="droid">
+
+				<div class="row" style="margin-bottom:10px;">
+				<div class="col-sm-12">
+					<div style="display:inline-block;" id="image_box">
+						<img src="images/iitg_logo.png" height="80" width="80">
+					</div>
+					<div id="info" style="display:inline-block;">
+						<h2 id="contentName">Student Name</h2>
+						<h5 id="contentRoll">Roll Number : 14010XXXX</h5>
+						<h5 id="contentCourse">BCA-Tnb college</h5>
+						<h5 id="contentCollege">Tilka Manjhi Bhagalpur University</h5>
+					</div>
+					<div id="contact" style="float:right; display:inline-block;">
+						+91-9999999999<br>
+						xyz.xyz@gmail.com<br>
+						<span class="light" id="contactLink1">www.linkedin.com/in/xyz123<br></span>
+						<span class="light" id="contactLink2">github.com/xyz123<br></span>
+					</div>
+				</div>
+				</div>
+
+			
+				<div class="section" id="sectionEducation">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Education</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul class="nobullet">
+					<li>
+						<table class="table customBordered" id="educationTable">
+							<tr>
+								<td class="header"><strong>Year</strong></td>
+								<td class="header"><strong>Degree / Certificate</strong></td>
+								<td class="header"><strong>Institute / Board</strong></td>
+								<td class="header"><strong>CGPA/Percentage</strong></td>
+							</tr>
+							<tr>
+								<td>2022</td>
+								<td>BCA-Tnb</td>
+								<td>TMBU</td>
+								<td>9.00 (Current)</td>
+							</tr>
+							<tr>
+								<td>2020</td>
+								<td>Senior secondary</td>
+								<td>CBSE board</td>
+								<td>97.0%</td>
+							</tr>
+							<tr>
+								<td>2018</td>
+								<td>Secondary</td>
+								<td>CBSE board</td>
+								<td>10.0</td>
+							</tr>
+						</table>
+					</li>
+					</ul>
+				</div>
+
+
+				<div class="section" id="sectionExperience">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Experience</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<li>
+						<div>	
+						<div class="title">XYZ Engineer at 'ABC'</div>
+						<div class="time right">May 2019 - July 2022</div>
+						</div>
+						<div>
+						<div class="link right">www.abc.in</div>
+						<div class="text">Analysed app usage statistics to recommend items based on user's preference.</div>
+						</div>
+					</li>
+					<li>
+						<div>	
+						<div class="title">XYZ Engineer at 'ABC'</div>
+						<div class="time right">Dec 2020</div>
+						</div>
+						<div>
+						<div class="link right">www.abc.in</div>
+						<div class="text">Designed methods to improve the existing unit test mechanism.</div>
+						</div>
+					</li>
+					</ul>
+				</div>
+				<div class="section" id="sectionSkills">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Technical skills</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<li>
+						<strong><span class="skillCategory">Programming languages</span> :</strong>
+						C++, Python, Java *
+					</li>
+					<li>
+						<strong><span class="skillCategory">Web technologies</span> :</strong>
+						HTML, CSS, Javascript
+					</li>
+					<li>
+						<strong><span class="skillCategory">Database management</span> :</strong>
+						mySQL
+					</li>
+					<li>
+						<strong><span class="skillCategory">Miscellaneous</span> :</strong>
+						Android programming *
+					</li>
+					<li>
+						<strong><span class="skillCategory">Operating system</span> :</strong>
+						Windows, Linux
+					</li>
+					<div class="star"><i>*<span class="light"> Elementary proficiency</span></i></div>
+					</ul>
+				</div>
+
+
+
+				<div class="section" id="sectionProjects">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Projects</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<li>
+						<div>		
+						<div class="title">Project title</div>
+						<div class="time right">Ongoing</div>
+						</div>
+						<div>
+						<div class="mentor tab">Project Mentor</div>
+						</div>
+						<div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
+						</div>
+					</li>
+					<li>
+						<div>		
+						<div class="title">Project title</div>
+						<div class="time right">Jan 2019 - Mar 2021</div>
+						</div>
+						<div>
+						<div class="mentor tab">Mentor name</div>
+						<div class="link right">www.xyz.in</div>
+						</div>
+						<div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
+						</div>
+					</li>
+					<li>
+						<div>		
+						<div class="title">Project title</div>
+						<div class="time right">Feb 2022</div>
+						</div>
+						<div>
+						<div class="link right">goo.gl/link</div>
+						</div>
+						<div>
+						<div class="text">Graphical interface to share files over institute's network.</div>
+						</div>
+					</li>
+					
+					</ul>
+				</div>
+				<div class="section" id="sectionAchievements">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Achievements</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<li>
+						<span class="title">ABC contest 2021 : </span>
+						<span class="text">Secured 1st position in the National level contest.</span>
+					</li>
+					<li>
+						<span class="title">Joint Entrance Examination 2020 : </span>
+						<span class="text">Secured All India Rank 1 among 0.15 million candidates appearing for the test.</span>
+					</li>
+					<li>
+						<span class="title">KVPY 2017-18 : </span>
+						<span class="text">Obtained the National research fellowship scholarship by securing a position in top 1%.</span>
+					</li>
+					<li>
+						<span class="title">ABC Olympiad 2019 : </span>
+						<span class="text">Qualified for the international stage by securing top position in following stages :</span>
+						<ul class="decimal">
+							<li>Qualifiers stage : Bagged 20th position among 5000 candidates.</li>
+							<li>National level : Bagged 7th position among 250 candidates.</li>
+						</ul>
+					</li>
+					</ul>
+				</div>
+
+			
+				<div class="section" id="sectionCourses">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Key courses taken</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<div class="row">
+						<div class="col-sm-6">
+							<li>Computer lab</li>
+							<li>Process design</li>
+							<li>Statistics *</li>
+						</div>
+						<div class="col-sm-6">
+							<li>Advanced calculus</li>
+							<li>XYZ architecture *</li>
+							<li>ABC lab *</li>
+						</div>
+					</div>
+					<div class="star"><i>*<span class="light"> To be completed in Nov 2016</span></i></div>
+					</ul>
+				</div>
+
+			
+				<div class="section" id="sectionCurricular">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Extracurriculars</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<li>
+						<span class="title">ABC workshop : </span>
+						<span class="text">Attended a 3-day workshop on Image sensing satellute development.</span>
+					</li>
+					<li>
+						<span class="title">ABC contest 2021 : </span>
+						<span class="text">Secured 1st position in the National level contest.</span>
+					</li>
+					</ul>
+				</div>
+
+				
+				<div class="section" id="sectionInterest">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Fields of interest (OR Research interests)</strong></h4>
+						<hr class="hr-below">
+					</div>
+					<ul>
+					<div class="row">
+						<div class="col-sm-6">
+							<li>Advanced XYZ</li>
+							<li>ABC design</li>
+						</div>
+						<div class="col-sm-6">
+							<li>XYZ processing</li>
+							<li>Robotics</li>
+						</div>
+					</div>
+					</ul>
+				</div>
+				
+				<div class="section" id="sectionFooterMessage">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h6><strong>(References available on request)</strong></h6>
+					</div>
+				</div>
+				
+				<div class="section" id="sectionPublications">
+					<div class="section-title ruled rule-above">
+						<hr class="hr-above">
+						<h4><strong>Declaration</strong></h4>
+						<hr class="hr-below">
+					</div>
+			
+						<div>	<ul>
+							<li>
+							<span class="text"><strong> I hereby declare that the information provided is true to the best of my knowledge</strong></span>
+						</li>
+						</ul>
+						</div>
+						
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6">
+								<br>
+								<p><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Your Name)</strong></p>
+							</div>
+							<div class="col-sm-4">
+							
+							</div>
+						</div>
+					</div>
+						
+						<div>
+						<!-- <div class="mentor">Mentors</div> -->
+						</div>
+					</li>
+					</ul>
+				</div>
+
+			</div>
+			
+		</div>
+
+
+	</div>
+
+</div>
+
+
+<div class="modal fade" id="usageModal" tabindex='-1'>
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h5><strong>Note : </strong>Use <strong>Google Chrome</strong>. Other browsers are unable to print properly and don't support some features.</h5>
+				<h4><strong>Editing content</strong></h4>
+				<ul>
+					<li>Edit the Resume content just like a normal document editor (cut,copy,undo etc).</li>
+					<li>Entire sections can be added, reordered, removed just by cut,copy,pasting method. (Use "show/hide sections" button to hide but retain content)</li>
+					<li>To remove a section/point/mentor/link etc, just delete it.</li>
+					<li>For styled/formatted text, select the text portion and press <kbd>Ctrl+b</kbd> for bold, <kbd>Ctrl+i</kbd> for italics, <kbd>Ctrl+u</kbd> for underlined text.</li>
+					<li>Use "Insert sub-list" button to insert sub-points in a point. (like as in achivements section)</li>
+					<li>Change indentation and bullet style of the list where your cursor is placed.</li>
+				</ul>
+				<h4><strong>Editing template</strong></h4>
+				<ul>
+					<li>Use the options in the left panel to modify the template/look.</li>
+					<li>In case you want to use a different template than the official IITG template, choose the corresponding button to see other setting options. (For on-campus purpose, you must use official IITG template)</li>
+				</ul>
+				<h4><strong>Saving</strong></h4>
+				<ul>
+					<li>Close any popup box (like this instructions popup	) if opened. Press <kbd>Ctrl+s</kbd></li>
+					<li>This will save the webpage (a .html file and a folder will be saved. Keep them together)</li>
+					<li>Open the .html file in browser from your PC.</li>
+					<li>This way, you can maintain multiple saved copies for each profile/template on your PC.</li>
+				</ul>
+				<h4><strong>Print as PDF</strong></h4>
+				<ul>
+					<li>Adjust margin in the Chrome's print dialog box. You may need it if a section is getting split between two pages. Print each page separately with different margins if needed.</li>
+					<li>If URLs or some stray text is being shown in print preview, disable the options "Include headers and footers","Include background graphics" etc in the print dialog box.</li>
+				</ul>
+				
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="sectionToggleModal" tabindex='-1'>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionEducation">Education</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionExperience">Experience</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionPublications">Publications</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionProjects">Projects</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionSkills">Technical Skills</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionAchievements">Achievements</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionCourses">Key courses taken</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionCurricular">Extra curriculars</label></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>

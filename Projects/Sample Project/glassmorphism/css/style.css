@@ -1,0 +1,379 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    scroll-behavior: smooth;
+    user-select: none;
+}
+section{
+    display: flex;
+    position: relative; 
+    height: auto;
+    scroll-snap-align: start;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    scroll-behavior: smooth;
+
+}
+.cover{
+    scroll-snap-type: y mandatory;
+    overflow-y:scroll;
+    height: 100vh;
+}
+.glass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #161623 ;
+}
+.glass::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00,#f0f);
+    clip-path: circle(30% at right 70%);
+}
+.glass::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3,#e91e63);
+    clip-path: circle(20% at 10% 10%);
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    z-index:  1;
+}
+.container .card{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.9); 
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px) ;
+}
+.container .card .content{
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity:0.4 ;
+    transition: 0.5s;
+    z-index: 1;
+}
+.container .card:hover .content{
+    transform: translateY(0px);
+    opacity:1 ;
+
+}
+.container .card .content h2{
+    top: -80px;
+    right: 10px;
+    text-align: center;
+    z-index: -1;
+    font-size: 8em;
+    color: rgba(255,255,255,0.05);
+    pointer-events: none;
+} 
+.container .card .content h3{
+    font-size: 1.8em;
+    color: #fff;
+    z-index: 1;
+}
+.container .card .content p{
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.603);
+    font-weight: 300;
+}
+.container .card .content a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/*-----calculator-----*/
+.landcalc{
+    position: relative;
+    display: block;
+    height: 100%;
+    background: #1c1623;
+    width: 100%;
+    overflow: hidden;
+}
+
+.landcalc::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#35ff03a6,#ffbd07);
+    clip-path:circle(22% at 20% 40%);
+    transform: scale(1);
+    transition: .3s;
+ }
+ .landcalc:hover::before{
+     transform: scale(1.1);
+     transition: 0.5s;
+ }
+ .landcalc::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#35ff03a6,#ffbd07);
+    clip-path: circle(18% at 80% 70%);
+    transform: scale(1);
+    transition: 0.3s;
+ }
+ .landcalc:hover::after{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+.holder{
+    position: relative;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 20px;   
+    overflow: hidden;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.5);
+
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    margin: 2% auto;
+    height: 90%;
+    width: 80%;
+}
+.holder .calculator{
+    position: relative;
+    display: grid;
+    transform: translateZ(10px);
+    height: 100%;
+
+}
+.holder .calculator .value{
+    grid-column: span 4;
+    height: 100%;
+    width: 100%; /*300/4=75px*/
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 3%;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.26);
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
+    border-right: 2px solid rgba(255,255,255,0.05);
+
+
+}
+.holder .calculator span{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    place-items: center;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;
+    font-size: 30px;
+    user-select: none;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
+    border-right: 2px solid rgba(255,255,255,0.05);
+    overflow: hidden;
+
+ 
+}
+.holder .calculator span:hover{
+    transition: 0.3s;
+    background: rgba(0,0,0,0.2);
+}
+.holder .calculator span:active{
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 4);
+    font-size: 24px;
+    font-weight: 500;
+}
+.holder .calculator .clear{
+    grid-column: span 2;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.holder .calculator .plus{
+    grid-row: span 2;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+
+}
+.mul,.div,.min{
+    background: rgba(0, 0, 0, 0.3);
+}
+.equal{
+    background: rgba(0, 0, 0, 0.5);
+    grid-row: span 1;
+}
+
+/*------calender------*/
+
+
+#cal{
+    position: relative;
+    display: block;
+    height: 100vh;
+    background: #1c1623;
+    width: 100%;
+    overflow-y: hidden;
+}
+#cal::before{
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(#ffc107,#e91e63);
+    border-radius: 50%;
+    transform:translate(0,0);
+    transform: scale(1);
+    transition: 0.2s;
+
+}
+#cal:hover::before{
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+#cal::after{
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(#2196f3,#31ff38);
+    border-radius: 50%;
+    bottom: 0;
+    right: 3%;
+    transform: scale(1);
+    transition: 0.2s;
+}
+#cal:hover::after{
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+.box{
+    position: absolute;
+    z-index: 100;
+    height: 90%;
+    width: 90%;
+    margin: 5% 10%;
+
+}
+.contain{
+    position: relative;
+    width: 90%;
+    height: 95%;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(25px);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#dycalendar{
+    width: 100%;
+    padding: 5%;
+     
+}
+#dycalendar table{
+    width: 100%;
+    margin-top: 5px;
+    border-spacing: 20px;
+}
+#dycalendar table tr:nth-child(1) td{
+    background: white;
+    color: #111;
+    border-radius: 4px;
+    font-weight: 700;
+
+}
+#dycalendar table td{
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#dycalendar table td:hover{
+    background: rgba(255, 255, 255, 0.548) !important;
+    color: #111 !important;
+}
+
+.dycalendar-month-container .dycalendar-today-date, .dycalendar-month-container .dycalendar-target-date{
+
+}
+
+.dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn.prev-btn{
+    background: white;
+    color: #111;
+    width: 40px;
+    height: 40px;
+    left: 4px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+
+}
+.dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn.next-btn{
+    background: white;
+    color: #111;
+    width: 40px;
+    height: 40px;
+    right: 4px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+.dycalendar-month-container .dycalendar-span-month-year{
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    font-weight: 500;
+    letter-spacing: 2px;
+}

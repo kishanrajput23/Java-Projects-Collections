@@ -1,0 +1,14 @@
+#search-input{
+    max-width: 400px;
+}
+.card{
+    padding: 10px;
+    background-color: whitesmoke;
+    margin:10px auto;
+}
+.img-fluid{
+    border-radius: 5px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}

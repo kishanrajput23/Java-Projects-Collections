@@ -1,0 +1,125 @@
+body {
+    background-image: radial-gradient(#fff, #ffb0b0);
+}
+.form {
+    margin: 50px auto;
+    width: 630px;
+    padding: 30px 25px;
+    background: white;
+}
+h1.login-title {
+    color: rgb(253, 10, 10);
+    margin: 0px auto 25px;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: center;
+}
+.login-input {
+    font-size: 15px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 25px;
+    height: 25px;
+    width: calc(100% - 23px);
+}
+.login-input:focus {
+    border-color:#6e8095;
+    outline: none;
+}
+.login-button {
+    color: #fff;
+    background: #dc143c;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.login-button:hover
+{
+    background:#0011ff
+}
+
+.link {
+    color: #666;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.link a {
+    color: #666;
+}
+h3 {
+    font-weight: normal;
+    text-align: center;
+}
+.navback{
+  display: inline-block;
+  background: #dc143c;
+  color: #fff;
+  padding: 10px 15px;
+  padding-left: 20px;
+  /*margin: 20px 35px;*/
+  border-radius: 20px;
+  transition: 0.5s;
+  flex-basis: 50%;
+  min-width: 2px;
+  text-decoration: none;
+}
+.navback:hover{
+  background: #0011ff;
+}
+.login{
+  display: inline-block;
+  background: #dc143c;
+  color: #fff;
+  padding: 10px 15px;
+  /*margin: 20px 35px;*/
+  border-radius: 20px;
+  transition: 0.5s;
+  flex-basis: 50%;
+  min-width: 2px;
+  text-decoration: none;
+}
+.login:hover{
+  background: #0011ff;
+}
+
+.request{
+    background: gradient(rgb(130, 251, 251),#fff);
+}
+.row{
+    margin-top: 250px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.small-container{
+    max-width: 1080px;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.col-3{
+    flex-basis: 10%;
+    min-width: 100px;
+    margin-bottom: 300px;
+    transition: transform 0.5s;
+
+}
+.col-3 hr{
+    width: 150px;
+}
+.col-3 img{
+    width: 100px;
+    height: 100px;
+}
+.col-3:hover{
+    transform: translateY(-5px);
+}

@@ -1,0 +1,18 @@
+body{
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  color: rgb(5, 5, 5);
+}
+#fm{
+  margin: 30px;
+  padding: 50px;
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  /*background: url("redgloss.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+}

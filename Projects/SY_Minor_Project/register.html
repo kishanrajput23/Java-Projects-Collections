@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>REGISTRATION | DONATION DESK | Blood Bank Data Management Website</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="icon" href="croplogotitle.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    { margin: 0; padding: 0; }
+
+    html {
+        background: url("rbc2.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <div class="logo">
+            <img src="logo.jpg" alt="DONATION DESK | Blood Bank Data Management Website" width="150px" class="centre">
+          </div>
+          <nav>
+            <ul>
+              <li><a class="navback" href="index.html">Home &#10170;</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="formsection">
+        <form action="register.php" method="POST" background-color="white">
+          <h2>Registration</h2>
+          <label for="r1" id="f_n">First Name</label><br>
+          <input type="text" name="fname" id="r1" placeholder="FirstName"><br>
+
+          <label for="r2" id="l_n">Last Name</label><br>
+          <input type="text" name="lname" id="r2" placeholder="LastName" required><br>
+
+          <label for="r3" id="p_no">Mobile Number</label><br>
+          <input type="text" minlength="10" maxlength="10" name="pno" id="r3" placeholder="0000000000" required><br>
+
+          <label for="r4" id="loc">Location</label><br>
+          <input type="text" name="locn" id="r4" placeholder="Area" required><br>
+
+          <label for="r5" id="u_i">Email</label><br>
+          <input type="text" name="user" id="r5" placeholder="Email ID" required><br>
+
+          <label for="r6" id="pass">Password</label><br>
+          <input type="password" name="pass" id="r6" placeholder="minimum 8 characters" required><br>
+
+          <label for="r7" id="rpass">Confirm Password</label><br>
+          <input type="password" name="rpass" id="r7" placeholder="minimum 8 characters" required><br><br>
+
+          <a href="login.html" class="btn2">Login &#10170;</a><a href="" class="btn1">Register &#10170;</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

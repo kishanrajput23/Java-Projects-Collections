@@ -1,0 +1,49 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 21, 2017, 6:36:07 PM
+    Author     : Hardeep
+*/
+
+
+#main, header, #banner, #menubar, #site_content, footer, #content_grey, nav, .login
+{ margin-left: auto; 
+  margin-right: auto;}
+.login{
+/*    padding: 114px 0px 0px 0px;*/
+}
+#main
+{ background: #1D1D1D url(../images/pattern.png) repeat;}
+  
+header
+{ background: #1D1D1D url(../images/pattern.png) repeat;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;}
+
+#banner
+{ width: 940px;
+  position: relative;
+  padding: 15px 0 0 0;
+  background: transparent;
+  height: 120px;}
+
+footer
+{ height: 50px;
+  padding-bottom: 30px;
+  font-weight: bold;
+  text-align: center; 
+  text-shadow: 1px 1px #000;
+  color: #FFF;}
+
+footer a
+{ color: #FFF;
+  text-decoration: none;
+  padding-bottom: 20px;}
+
+footer a:hover
+{ text-decoration: underline;
+  color: #FFF;}

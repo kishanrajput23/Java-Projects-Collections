@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="/notes-icon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Note Taking App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="notes-icon.png" alt="logo" width="30px" class="mx-3">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        onclick="toggleMenu()">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <button class="btn btn-dark" onclick="displayHome()">Home</button>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-dark" onclick="displayNotes()">Your Notes</button>
+          </li>
+
+
+        </ul>
+        <div class="d-flex align-items-center justify-content-center">
+          <input class="form-control me-2" type="search" placeholder="Search Notes.." aria-label="Search" id="input">
+          <i class="fa-solid fa-search text-light fs-5"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8 mx-auto" id="form-container">
+        <h2 class="text-center">Add a note</h2>
+        <form id="my-form">
+          <div class="mb-3">
+            <label for="title" class="form-label fs-5">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" required
+              autocomplete="off">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label fs-5">Description</label>
+            <textarea name="description" id="description" rows="5" class="form-control" required autocomplete="off"
+              placeholder="Enter Description"></textarea>
+          </div>
+          <button class="btn btn-dark">Submit</button>
+        </form>
+      </div>
+      <div class="col-lg-8 mx-auto" id="all-notes">
+        <h2 class="text-center">Your Notes</h2>
+        <div id="notes-container">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Note</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="edit-form">
+
+            <input type="text" class="form-control mb-3" id="edit-title" placeholder="Edit Title" required
+              autocomplete="off">
+
+            <textarea name="edit-description" id="edit-description" rows="5" class="form-control mb-3" required
+              autocomplete="off" placeholder="Edit Description"></textarea>
+
+            <button class="btn btn-success">Save Changes</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

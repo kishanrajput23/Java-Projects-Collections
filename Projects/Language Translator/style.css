@@ -1,0 +1,35 @@
+
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg,#010758,#490d61);
+    
+    color: whitesmoke;
+}
+
+.col-lg-6{
+    position: relative;
+}
+
+.buttons{
+    position: absolute;
+    bottom:10px;
+    right: 20px;
+}
+i{
+    
+   
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(20, 128, 201);
+}
+
+@media (max-width:968px) {
+    .col-lg-6{
+        margin-top: 20px;
+    }
+   
+}

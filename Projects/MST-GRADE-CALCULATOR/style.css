@@ -1,0 +1,122 @@
+body {
+    background:#74c4b1;
+    font-size: 12px;
+  }
+  
+  body, button, input {
+    font-family: revert-layer;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+  }
+  
+  .background {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .container {
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .screen {
+    position: relative;
+    background: #3b3a30;
+    border-radius: 15px;
+  }
+  
+  .screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    z-index: -1;
+  }
+  
+  .screen-body {
+    display: flex;
+  }
+  
+  .screen-body-item {
+    flex: 1;
+    padding: 50px;
+  }
+  
+  .screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .grade-title {
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    align-items: center;
+    color: #50b0a0;
+    font-size: 26px;
+    text-transform: uppercase;
+    border-left: 4px solid #50b0a0;
+    padding: 10px;
+  }
+  
+  .grade-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .grade-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+  }
+  
+  .grade-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #ddd;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+  }
+  
+  .grade-form-control::placeholder {
+    color: #FFF;
+  }
+  
+  .grade-form-control:focus {
+    border-bottom-color: #ddd;
+  }
+  
+  .grade-form-button {
+    background: none;
+    border: none;
+    color: #50b0a0;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+  }
+  
+  .grade-form-button:hover {
+    color: #218c74;
+  }
+  
+  .showdata{
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    padding-top: -10px;
+    padding-bottom: 10px;
+  }
+  
