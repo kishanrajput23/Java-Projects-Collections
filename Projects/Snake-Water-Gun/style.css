@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #ecf0f1;
+}
+
+.container{
+    
+    background-color: white;
+}
+.card{
+    border: none;
+    padding: 10px;
+}
+
+span{
+    color: blue;
+}
+
+.card img{
+    width: 300px;
+}
+
+@media (max-width:768px) {
+    .card img{
+        width: 100px;
+    }   
+}

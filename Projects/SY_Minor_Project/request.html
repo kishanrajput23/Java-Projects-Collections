@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="request.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Blood Request</div>
+    <div class="content">
+      <form name="f1" method="POST" action="https://localhost/Sy_Minor_Project/request.php">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" name="full_name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" name="email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Location</span>
+            <input type="text" placeholder="Enter Location" name="location" required>
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" placeholder="Enter your city" name="city" required>
+          </div>
+          <div class="input-box">
+              <div class="select_title">
+                <label for="bloods">Blood Group</label>
+              </div>
+            <select name="blood_groups" id="blood_groups">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="A+">A+</option>
+                <option value="B+">B+</option>
+                <option value="AB+">AB+</option>
+                <option value="O">O</option>
+                <option value="O+">O+</option>
+                <option value="A-">A-</option>
+                <option value="B-">B-</option>
+                <option value="AB-">AB-</option>
+                <option value="O-">O-</option>
+            </select>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone number</span>
+            <input type="text" placeholder="Enter phone number" minlength="10" maxlength="10" name="mob_no" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" value="Male" id="dot-1">
+          <input type="radio" name="gender" value="Female" id="dot-2">
+          <input type="radio" name="gender" value="Other" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Other</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Send Request">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

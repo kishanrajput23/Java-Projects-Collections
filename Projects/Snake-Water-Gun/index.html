@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snake Water Gun </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    
+    <div class="container shadow rounded  text-center ">
+      
+      <h2 class="text-danger fw-bold mt-2">Snake Water Gun Game</h2>
+      <hr class="w-50 mx-auto">
+      <div class="d-flex  align-items-center flex-wrap justify-content-center">
+       
+          <div class="card">
+            <img src="snake.png" class="img-fluid card-img-top">
+            <div class="card-body text-center">
+              <h5 class="card-title fs-2 fw-bold">Snake</h5>
+              <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" id="snake-btn">Select</button>
+            </div>
+          </div>
+        
+        
+          <div class="card">
+            <img src="water.jpg" class="img-fluid card-img-top">
+            <div class="card-body text-center">
+              <h5 class="card-title fs-2 fw-bold mt-3">Water</h5>
+              <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal"  id="water-btn">Select</button>
+            </div>
+          </div>
+
+        
+        
+          
+          <div class="card">
+            <img src="Gun.jpg" class="img-fluid card-img-top">
+            <div class="card-body text-center">
+              <h5 class="card-title fw-bold fs-2 mt-3">Gun</h5>
+              <button class="btn btn-danger mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" id="gun-btn">Select</button>
+            </div>
+          </div>
+
+       
+      </div>
+       
+    </div>
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">User Score: <span id="user-score">0</span></h1>
+        <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">Cpu Score: <span id="cpu-score">0</span></h1>
+        
+      </div>
+      <div class="modal-body">
+       <h5 class="text-success">User Choose : <span id="user-select"></span class="text-success"></h5>
+       <h5 class="text-success">Cpu Choose  :<span id="cpu-select"></span></h5>
+        <h3 class="text-success">Winner : <span id="winner"></span></h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Choose Again</button>
+        <button type="button" class="btn btn-primary" id="reset">Reset</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>

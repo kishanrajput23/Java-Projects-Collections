@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="withdevice-width initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="stylesheet" href="./css/dycalendar.css">
+
+
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+ <script src="https://kit.fontawesome.com/2d3dc5d61d.js" crossorigin="anonymous"></script>
+        <title>Glassmorphism</title>
+
+
+    </head>
+
+<body>
+
+
+<div class="cover">
+    <center>
+        <h3 style="color: #000;opacity: 50%;">Made by Vilas Hegde</h3>
+    </center>
+
+
+        <section class="glass">
+            <div class="container">
+                <div class="card">
+                    <div class="content">
+                        <h2>01</h2>
+                        <h3>Card One</h3>
+                        <p>Glassmorphism is a new design trend that is currently very popular. You'll see it all over websites such as Apple and Microsoft are using it.</p> 
+                        <a href="#">Read More</a>
+                    </div>
+                </div> 
+                <div class="card">
+                    <div class="content">
+                        <h2>02</h2>
+                        <h3>Card Two </h3>
+                        <p>WGlassmorphism is a new design trend that is currently very popular. You'll see it all over websites such as Apple and Microsoft are using it.</p> 
+                        <a href="#">Read More</a>
+                    </div>
+                </div>    
+                    <div class="card">
+                        <div class="content">
+                            <h2>03</h2>
+                            <h3>Card Three</h3>
+                            <p>Glassmorphism is a new design trend that is currently very popular. You'll see it all over websites such as Apple and Microsoft are using it.</p> 
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+
+
+        <section class="landcalc">
+        <div class="holder">
+            <form class="calculator" name="calc">
+                <input type="text" readonly class="value" name="txt"/>
+                <span class="num clear" onclick="calc.txt.value = ''">C</span>
+                <span class="num div" onclick="document.calc.txt.value +='/'">/</span>
+                <span class="num mul" onclick="document.calc.txt.value +='*'">*</span>
+                <span class="num" onclick="document.calc.txt.value +='7'">7</span>
+                <span class="num" onclick="document.calc.txt.value +='8'">8</span>
+                <span class="num minus" onclick="document.calc.txt.value +='9'">9</span>
+                <span class="num min" onclick="document.calc.txt.value +='-'">-</span>
+                <span class="num" onclick="document.calc.txt.value +='4'">4</span>
+                <span class="num" onclick="document.calc.txt.value +='5'">5</span>
+                <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+                <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
+                <span class="num" onclick="document.calc.txt.value +='1'">1</span>
+                <span class="num" onclick="document.calc.txt.value +='2'">2</span>
+                <span class="num" onclick="document.calc.txt.value +='3'">3</span>
+                <span class="num" onclick="document.calc.txt.value +='0'">0</span>
+                <span class="num" onclick="document.calc.txt.value +='00'">00</span>
+                <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+                <span class="num equal" onclick="document.calc.txt.value =eval(calc.txt.value)">=</span>
+            </form>
+        </div>
+    </section>
+
+    <section id="cal">
+        <div class="box">
+            <div class="contain">
+            <div id="dycalendar"></div>
+            </div>
+        </div>
+    </section>
+ 
+<script src="./dycalendar.js"></script>
+<script>
+    dycalendar.draw({
+        target:'#dycalendar',
+        type:'month',
+        dayformat:'full',
+        monthformat:'full',
+        highlighttargetdate:true,
+        prevnextbutton:'show',
+    })
+</script>
+
+
+    <script type="text/javascript" src="vanilla-tilt.js">
+    </script>
+
+    </div>
+</body>
+
+
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+		max: 25,
+		speed: 400,
+        glare:true,
+        "max-glare":0.2,
+	});
+    </script>
+
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".holder"), {
+		max: 10,
+		speed: 50,
+        scale:1.1,
+        easing:"cubic-bezier(.03,.98,.52,.99)",
+        perspective:  10000,
+        glare:true,
+        "max-glare":0.2, 
+        gyroscope: true,  
+    gyroscopeMinAngleX: -45,    
+    gyroscopeMaxAngleX:  45,  
+    gyroscopeMinAngleY: -45,   
+    gyroscopeMaxAngleY:  45,
+
+	});
+	
+    </script>
+
+<script>
+    VanillaTilt.init(document.querySelectorAll("span"), {
+    max: 25,
+    speed: 100,
+    glare:true,
+    "max-glare":0.5,
+    perspective:1000,
+});
+</script>
+</html>
+

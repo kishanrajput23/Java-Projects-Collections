@@ -1,0 +1,147 @@
+/* Resetting default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the height and width of HTML and body elements to 100% */
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* Styling for the main container */
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Styling for the heading */
+#heading {
+    margin-bottom: 8px;
+}
+
+#heading h1 {
+    color: white;
+    font-size: 4vw;
+}
+
+/* Styling for the panel containing the game */
+#panel {
+    height: 80%;
+    width: 80%;
+    background-color: rgb(76, 68, 225);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+/* Styling for the top section of the panel */
+#ptop {
+    height: 90px;
+    background-color: rgb(105, 48, 161);
+    border-bottom: 1.5px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20%;
+}
+
+/* Styling for elements within the top section */
+.elem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.elem h2 {
+    color: azure;
+    font-weight: 600;
+}
+
+/* Styling for boxes within the top section */
+.box {
+    background-color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+/* Styling for the bottom section of the panel */
+#pbtm {
+    height: calc(100% - 90px);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Styling for the game over message */
+#pbtm h1 {
+    color: white;
+    font-size: 5vw;
+}
+
+/* Styling for the restart button */
+#pbtm button {
+    width: 130px;
+    height: 40px;
+    border-radius: 6px;
+    color: white;
+    background-color: rgb(105, 48, 161);
+    font-weight: 600;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1.5px;
+    padding: 5px 10px;
+}
+
+/* Styling for bubbles */
+.bubble {
+    height: 50px;
+    background-color: rgb(114, 216, 244);
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+/* Hover effect for bubbles */
+.bubble:hover {
+    cursor: pointer;
+    background-color: rgba(104, 192, 216, 0.895);
+}
+
+/* Media query for screens with a width less than 600px */
+@media (max-width: 600px) {
+    #ptop {
+        height: 80px;
+        padding: 0 4%; /* Adjusted padding */
+        justify-content: space-evenly;
+    }
+    #pbtm {
+        padding: 10px;
+    }
+    #panel {
+        height: 79%;
+    }
+    #heading h1 {
+        font-size: 4vh;
+    }
+}

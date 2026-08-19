@@ -1,0 +1,108 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.centerdiv{
+  height: 0.5vh;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: #ff0000;
+}
+.about-section{
+  overflow: hidden;
+  padding: 35px 0;
+}
+.inner-container{
+  width: 80%;
+  float: right;
+  background-color: #fff;
+  padding: 4px;
+}
+.inner-container h1{
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #ff0000;
+}
+.text{
+  font-size: 17px;
+  color: #8B0000;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+.navback{
+  text-decoration: none;
+    display: inline-block;
+    background: #f5fffa;
+    color: #ff0000;
+    padding: 0px 10px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.navback:hover{
+  background: #ff0000d8;
+  color: #000;
+}
+nav{
+  flex: 1;
+  text-align: right;
+}
+nav ul{
+  display: inline-block;
+  list-style-type: none;
+}
+nav ul li{
+  display: inline-block;
+  margin-right: 20px;
+}
+a{
+  height: 65px;
+  width: 65px;
+  background-color: #f5f6fa;
+  border-radius: 50px;
+  text-align: center;
+  margin: 10px;
+  line-height: 63px;
+  box-shadow: 1px 4px 2px 2px #dcdde1;
+}
+a i{
+  transition: all 0.3s linear;
+}
+a:hover i{
+  transform: scale(1.8);
+}
+.fa-facebook{
+  color: #3b5998;
+}
+.fa-instagram{
+  color: #8a3ab9;
+}
+.fa-twitter{
+  color: #00acee;
+}
+.fa-youtube{
+  color: #c4302b;
+}
+.fa-linkedin{
+  color: #0e76a8;
+}
+.fa-pinterest{
+  color: #c8232c;
+}
+
+html{
+  background: url("aboutus.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&display=swap');
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#all-notes {
+    display: none;
+}
+
+.card {
+    padding: 10px;
+    margin: 20px 0px;
+}
+
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+
+
+.form-control {
+    box-shadow: none !important;
+}
