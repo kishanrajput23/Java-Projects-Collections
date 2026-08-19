@@ -3,11 +3,11 @@
 This repository contains a wide variety of Java projects and code samples, ranging from beginner to advanced level. Projects cover different topics, levels of complexity, and real-world use cases. You’ll find:
 
 - Simple programs and utilities
-- Data structures & Algorithms 
+- Data structures and Algorithms 
 - Games and interactive applications
 - Tools, calculators, and mini-projects
 - Domain-specific and practical Java solutions
-- Solutions related to DSA Problms from Leetcode & Codeforces
+- Solutions related to DSA Problms from Leetcode and Codeforces
 
 All projects are organized in folders for easy exploration and learning.
 
